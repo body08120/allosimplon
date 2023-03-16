@@ -15,7 +15,7 @@
     <!--navbar-->
     <?php include('../includes/navbar.php') ?>
 
-
+<div class="xl:px-52 xl:mb-32 2xl:mx-52 ">
     <!-- text Inscription -->
     <div class="py-5 px-10">
         <h1 class="text-center uppercase font-semibold text-[24px] text-[#EAD7D7] tracking-[.15em]">Inscription<h1>
@@ -27,16 +27,16 @@
 
 
     <!--formulaire-->
-    <div class="bg-[#6D466B] py-5 px-10">
+    <div class="bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-52 xl:rounded-lg">
         <form action="" method="post" class="flex flex-col">
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0" type="text" placeholder="Nom" name="nom-user" />
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0" type="text" placeholder="Prénom" name="prenom-user" />
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0" type="email" placeholder="Adresse email" name="mail-user" />
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0" type="email" placeholder="Re-tapez votre adresse email" name="mail-user" />
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0" type="text" placeholder="Pseudonyme" name="pseudo-user" />
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Nom" name="nom-user" />
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Prénom" name="prenom-user" />
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email" placeholder="Adresse email" name="mail-user" />
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email" placeholder="Re-tapez votre adresse email" name="mail-user" />
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Pseudonyme" name="pseudo-user" />
 
                     <!-- password -->
-                    <div class="relative w-full my-3 focus:border-transparent focus:ring-0">
+                    <div class="relative w-full my-3 focus:border-transparent focus:ring-0 md:my-5">
                         <div class="absolute inset-y-0 right-0 flex items-center px-2">
                         <input class="hidden js-password-toggle focus:border-transparent focus:ring-0" id="toggle" type="checkbox" />
                         <label class="bg-gray-300 hover:bg-gray-400 rounded-full px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer js-password-label" for="toggle">Voir</label>
@@ -46,7 +46,7 @@
                     <!---->
 
                     <!-- password -->
-                    <div class="relative w-full my-3 focus:border-transparent focus:ring-0">
+                    <div class="relative w-full my-3 focus:border-transparent focus:ring-0 md:my-5">
                         <div class="absolute inset-y-0 right-0 flex items-center px-2">
                         <input class="hidden js-repassword-toggle focus:border-transparent focus:ring-0" id="retoggle" type="checkbox" />
                         <label class="bg-gray-300 hover:bg-gray-400 rounded-full px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer js-repassword-label" for="retoggle">Voir</label>
@@ -67,7 +67,7 @@
                     lg:py-4 lg:my-10" />
         </form>
     </div>
-
+</div>
 
 
 
