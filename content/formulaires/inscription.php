@@ -15,7 +15,7 @@
     <!--navbar-->
     <?php include('../includes/navbar.php') ?>
 
-<div class="xl:px-52 xl:mb-32 2xl:mx-52 ">
+<div class="xl:px-64 xl:mb-44 2xl:mx-52 2xl:px-76">
     <!-- text Inscription -->
     <div class="py-5 px-10">
         <h1 class="text-center uppercase font-semibold text-[24px] text-[#EAD7D7] tracking-[.15em]">Inscription<h1>
@@ -27,7 +27,7 @@
 
 
     <!--formulaire-->
-    <div class="bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-52 xl:rounded-lg">
+    <div class="bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-32 xl:rounded-lg">
         <form action="" method="post" class="flex flex-col">
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Nom" name="nom-user" />
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Prénom" name="prenom-user" />

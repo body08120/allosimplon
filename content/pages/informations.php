@@ -15,26 +15,26 @@
 
 
 <!-- text contact-->
-<div class="py-5 px-10">
+<div class="py-5 px-10 lg:px-20 xl:px-40">
 
     <h1 class="text-center uppercase font-semibold text-[24px] text-[#EAD7D7] tracking-[.15em]">Informations utiles<h1>
 
     <p class="py-5 text-center font-light text-[#EAD7D7] text-[18px] tracking-[.10em]">
     Bienvenue sur notre site de streaming gratuit! Nous sommes ravis de vous proposer une expérience de visionnage en ligne de haute qualité en 2023 et au-delà.
     </p>
-
+<br>
     <p class="py-5 text-center font-light text-[#EAD7D7] text-[18px] tracking-[.10em]">
     Notre plateforme est constamment mise à jour pour répondre aux besoins et aux attentes de nos utilisateurs, 
     et de nombreuses améliorations et fonctionnalités utiles sont à venir dans un proche avenir.   
     </p>
-
+<br>
     <p class="py-5 text-center font-light text-[#EAD7D7] text-[18px] tracking-[.10em]">
     Nous sommes fiers de dire que notre site est développé par Nataël Renollet, 
     un expert en développement web avec des années d'expérience dans la création de plateformes de streaming. 
     Nous sommes convaincus que vous apprécierez l'expérience que nous avons créée pour vous, 
     avec une sélection de films et de séries TV captivants que vous pouvez regarder gratuitement et en ligne. 
     </p>
-
+<br>
     <p class="py-5 text-center font-light text-[#EAD7D7] text-[18px] tracking-[.10em]">
     Nous sommes engagés à fournir à nos utilisateurs une expérience de streaming sans interruption et de qualité supérieure, 
     et nous sommes toujours à l'écoute de vos commentaires et de vos suggestions pour améliorer notre site. 

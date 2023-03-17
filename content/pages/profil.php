@@ -16,7 +16,7 @@
 
 
 
-<!--S USER-->
+<!--Section USER-->
 <section class="w-auto h-96 
                 bg-[url('http://localhost/allosimplon/assets/img/background/bg-user-profil.png')] bg-cover bg-no-repeat
                 flex justify-center items-center 
@@ -31,184 +31,241 @@
 </section>
 
 
-
-<!--S vos favoris -->
+<!--Section vos favoris -->
 <section class="py-10 text-[18px] text-[#EAD7D7]">
     <div class="py-5 px-10">
         <div class="w-2/4 h-2 bg-[#EAD7D7]"></div>
         <h2 class="text-[24px] tracking-[.15em]">Vos favoris</h2>
     </div>
 
+<!-- <hr class="bg-[#EAD7D7] mb-20"> -->
+
+<div class="lg:px-10">
 <!--container1 cards fav-->
-<hr class="bg-[#EAD7D7] mb-20">
-<div class="bg-[#6D466B]">
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
     <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
-    <div class="py-5 px-10">
+<div class="py-5 px-10">
     <!--année-->
     <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
 
     <!--titre-->
     <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
-<br>
-    <!--genres-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Genres:</span> Drame, policier ,fantastique</p>
     
-    <!--distributions-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Distributions:</span> Frank Darabont,Michael Clarke Duncan,Tom Hanks, David Morse</p>
-    
-    <!--synopsis-->
-    <p class="font-semibold py-5 tracking-[.10em]">
-        Paul Edgecomb, pensionnaire centenaire d'une maison de retraite, est hanté par ses souvenirs. 
-        Gardien-chef du pénitencier de Cold Mountain, en 1935, en Louisiane, 
-        il était chargé de veiller au bon déroulement des exécutions capitales au bloc E (la ligne verte) en s'efforçant d'adoucir les derniers moments des condamnés. 
-        Parmi eux se trouvait un colosse du nom de John Coffey, accusé du viol et du meurtre de deux fillettes.
-    </p>
-    
-
-    <!--lien vers voir-->
-    <div class="py-10 flex justify-evenly font-bold underline tracking-[.10em]">
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
         <a href="">Voir en streaming</a>
         <a href="">Voir la bande-annonce</a>
     </div>
 
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
     </div>
-    
-    
-</div>
-<hr class="bg-[#EAD7D7] my-20">
-<!---->
 
+</div>   
+</div>
+
+<!---->
 
 <!--container2 cards fav-->
-<div class="bg-[#6D466B]">
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
     <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
-    <div class="py-5 px-10">
+<div class="py-5 px-10">
     <!--année-->
     <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
 
     <!--titre-->
     <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
-<br>
-    <!--genres-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Genres:</span> Drame, policier ,fantastique</p>
     
-    <!--distributions-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Distributions:</span> Frank Darabont,Michael Clarke Duncan,Tom Hanks, David Morse</p>
-    
-    <!--synopsis-->
-    <p class="font-semibold py-5 tracking-[.10em]">
-        Paul Edgecomb, pensionnaire centenaire d'une maison de retraite, est hanté par ses souvenirs. 
-        Gardien-chef du pénitencier de Cold Mountain, en 1935, en Louisiane, 
-        il était chargé de veiller au bon déroulement des exécutions capitales au bloc E (la ligne verte) en s'efforçant d'adoucir les derniers moments des condamnés. 
-        Parmi eux se trouvait un colosse du nom de John Coffey, accusé du viol et du meurtre de deux fillettes.
-    </p>
-    
-
-    <!--lien vers voir-->
-    <div class="py-10 flex justify-evenly font-bold underline tracking-[.10em]">
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
         <a href="">Voir en streaming</a>
         <a href="">Voir la bande-annonce</a>
     </div>
 
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
     </div>
-    
-    
-</div>
-<hr class="bg-[#EAD7D7] my-20">
-<!---->
 
+</div>   
+</div>
+
+<!---->
 
 <!--container3 cards fav-->
-<div class="bg-[#6D466B]">
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
     <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
-    <div class="py-5 px-10">
+<div class="py-5 px-10">
     <!--année-->
     <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
 
     <!--titre-->
     <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
-<br>
-    <!--genres-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Genres:</span> Drame, policier ,fantastique</p>
     
-    <!--distributions-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Distributions:</span> Frank Darabont,Michael Clarke Duncan,Tom Hanks, David Morse</p>
-    
-    <!--synopsis-->
-    <p class="font-semibold py-5 tracking-[.10em]">
-        Paul Edgecomb, pensionnaire centenaire d'une maison de retraite, est hanté par ses souvenirs. 
-        Gardien-chef du pénitencier de Cold Mountain, en 1935, en Louisiane, 
-        il était chargé de veiller au bon déroulement des exécutions capitales au bloc E (la ligne verte) en s'efforçant d'adoucir les derniers moments des condamnés. 
-        Parmi eux se trouvait un colosse du nom de John Coffey, accusé du viol et du meurtre de deux fillettes.
-    </p>
-    
-
-    <!--lien vers voir-->
-    <div class="py-10 flex justify-evenly font-bold underline tracking-[.10em]">
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
         <a href="">Voir en streaming</a>
         <a href="">Voir la bande-annonce</a>
     </div>
 
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
     </div>
-    
-    
-</div>
-<hr class="bg-[#EAD7D7] my-20">
-<!---->
 
+</div>   
+</div>
+
+<!---->
 
 <!--container4 cards fav-->
-<div class="bg-[#6D466B]">
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
     <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
-    <div class="py-5 px-10">
+<div class="py-5 px-10">
     <!--année-->
     <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
 
     <!--titre-->
     <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
-<br>
-    <!--genres-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Genres:</span> Drame, policier ,fantastique</p>
     
-    <!--distributions-->
-    <p class="py-5 italic font-thin tracking-[.10em]"><span>Distributions:</span> Frank Darabont,Michael Clarke Duncan,Tom Hanks, David Morse</p>
-    
-    <!--synopsis-->
-    <p class="font-semibold py-5 tracking-[.10em]">
-        Paul Edgecomb, pensionnaire centenaire d'une maison de retraite, est hanté par ses souvenirs. 
-        Gardien-chef du pénitencier de Cold Mountain, en 1935, en Louisiane, 
-        il était chargé de veiller au bon déroulement des exécutions capitales au bloc E (la ligne verte) en s'efforçant d'adoucir les derniers moments des condamnés. 
-        Parmi eux se trouvait un colosse du nom de John Coffey, accusé du viol et du meurtre de deux fillettes.
-    </p>
-    
-
-    <!--lien vers voir-->
-    <div class="py-10 flex justify-evenly font-bold underline tracking-[.10em]">
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
         <a href="">Voir en streaming</a>
         <a href="">Voir la bande-annonce</a>
     </div>
 
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
     </div>
-    
-    
+
+</div>   
 </div>
+
 <!---->
 
+<!--container5 cards fav-->
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
+
+    <!--affiche-->
+    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    
+<div class="py-5 px-10">
+    <!--année-->
+    <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
+
+    <!--titre-->
+    <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
+    
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
+        <a href="">Voir en streaming</a>
+        <a href="">Voir la bande-annonce</a>
+    </div>
+
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
+    </div>
+
+</div>   
+</div>
+
+<!---->
+
+<!--container6 cards fav-->
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
+
+    <!--affiche-->
+    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    
+<div class="py-5 px-10">
+    <!--année-->
+    <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
+
+    <!--titre-->
+    <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
+    
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
+        <a href="">Voir en streaming</a>
+        <a href="">Voir la bande-annonce</a>
+    </div>
+
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
+    </div>
+
+</div>   
+</div>
+
+<!---->
+
+<!--container7 cards fav-->
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
+
+    <!--affiche-->
+    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    
+<div class="py-5 px-10">
+    <!--année-->
+    <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
+
+    <!--titre-->
+    <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
+    
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
+        <a href="">Voir en streaming</a>
+        <a href="">Voir la bande-annonce</a>
+    </div>
+
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
+    </div>
+
+</div>   
+</div>
+
+<!---->
+
+<!--container8 cards fav-->
+<div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
+
+    <!--affiche-->
+    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    
+<div class="py-5 px-10">
+    <!--année-->
+    <span class="text-[24px] font-bold tracking-[.15em]">2000</span>
+
+    <!--titre-->
+    <h4 class="text-[24px] font-bold tracking-[.15em]">La ligne verte</h4>
+    
+    <!--lien vers voir-->    
+    <div class=" flex justify-around font-bold underline tracking-[.10em]">
+        <a href="">Voir en streaming</a>
+        <a href="">Voir la bande-annonce</a>
+    </div>
+
+    <div class="flex justify-around font-bold underline tracking-[.10em]">
+    <a href="">Voir plus</a>
+    </div>
+
+</div>   
+</div>
+<!---->
+</div>
+
 </section>
-
-
 
 
 <!-------------------------------------->

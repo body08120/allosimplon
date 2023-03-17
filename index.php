@@ -70,7 +70,7 @@
     <!---->
 
   <form method="" action="" class="flex flex-col">
-    <div class="flex justify-between items-center bg-white rounded-full lg:mx-20">
+    <div class="flex justify-between items-center bg-white rounded-full lg:mx-20 xl:mx-64">
       <input type="email" placeholder="exemple.du-08@gmail.fr" name="input-form-email-newsletters" class="border-none bg-transparent focus:border-transparent focus:ring-0"/>
         <!--icone mail-->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-2">

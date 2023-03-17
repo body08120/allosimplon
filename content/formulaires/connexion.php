@@ -16,7 +16,7 @@
 
 
 
-<div class="xl:px-52 xl:mb-32 2xl:mx-52 ">
+<div class="xl:px-52 xl:mb-44 2xl:mx-52 ">
     <!-- text Inscription -->
     <div class="py-5 px-10">
         <h1 class="text-center uppercase font-semibold text-[24px] text-[#EAD7D7] tracking-[.15em]">Connexion<h1>
