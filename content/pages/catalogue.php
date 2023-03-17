@@ -15,7 +15,7 @@
 
 
 <!--section tri-->
-<div class="px-10 mb-6 bg-[#6D466B] border-t-2 border-[#412234]">
+<div class="px-10 mb-6 bg-[#6D466B] border-t-2 border-[#412234] lg:px-20 lg:mx-64 2xl:px-40 2xl:mx-96">
     <form class="flex flex-col text-[18px] font-thin" action="" method="GET">
     <select class="uppercase text-[#B49FCC] tracking-[.10em] py-1 px-8 rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" name="genre">
 <option value="genre1">genre1</option>
@@ -129,7 +129,7 @@
         class="py-1 px-8 my-6 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
                 focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0
                 md:px-16 md:py-2 
-                lg:py-4 lg:my-10" />
+                lg:my-10" />
     </form>
 <!--____________________-->
     <form class="flex flex-col" action="" method="GET">
@@ -141,7 +141,7 @@
         class="py-1 px-8 my-6 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
                 focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0
                 md:px-16 md:py-2 
-                lg:py-4 lg:my-10" />
+                lg:my-10" />
     </form>
 </div>
 <!---->
