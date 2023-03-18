@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/allosimplon/">
     <title>AlloSimplon - Accueil</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"  rel="stylesheet" />
@@ -71,7 +72,7 @@
 
   <form method="" action="" class="flex flex-col">
     <div class="flex justify-between items-center bg-white rounded-full lg:mx-20 xl:mx-64">
-      <input type="email" placeholder="exemple.du-08@gmail.fr" name="input-form-email-newsletters" class="border-none bg-transparent focus:border-transparent focus:ring-0"/>
+      <input type="email" placeholder="exemple.du08@gmail.fr" name="input-form-email-newsletters" class="border-none bg-transparent focus:border-transparent focus:ring-0"/>
         <!--icone mail-->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mx-2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
