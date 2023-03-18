@@ -39,16 +39,16 @@
   <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
     <ul class="flex flex-col p-4 mt-4 border border-gray-900 rounded-lg bg-[#B49FCC] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#B49FCC]">
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-white bg-[#6D466B] rounded md:bg-transparent md:text-[#6D466B] md:p-0 dark:text-white" aria-current="page">Accueil</a>
+        <a href="index.php" class="block py-2 pl-3 pr-4 text-white bg-[#6D466B] rounded md:bg-transparent md:text-[#6D466B] md:p-0 dark:text-white" aria-current="page">Accueil</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Catalogue</a>
+        <a href="content/pages/catalogue.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Catalogue</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Contact</a>
+        <a href="content/formulaires/contact.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Contact</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Plus d'infos</a>
+        <a href="content/pages/informations.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Plus d'infos</a>
       </li>
       <li>
         <a href="#" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Admin</a>
