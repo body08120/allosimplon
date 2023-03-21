@@ -1,0 +1,13 @@
+.owl-theme .item {
+    height: 10rem;
+    background: #4dc7a0;
+    /* padding: 1rem; */
+  }
+  
+  .owl-carousel .item h4 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.4375rem;
+    margin-top: 0rem;
+  }
+  
