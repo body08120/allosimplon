@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-[#412234] font-mono">
-
+<?php session_start(); ?>
   <!--navbar-->
   <?php include('content/includes/navbar.php') ?>
 
