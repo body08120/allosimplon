@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
-
+// $_SESSION['login-mail'] = $_POST['mail-user'];
+// $_SESSION['login-nom'] = $_POST['nom-user'];
 $nom = htmlspecialchars($_POST['nom-user']);
 $prenom = htmlspecialchars($_POST['prenom-user']);
 $email = htmlspecialchars($_POST['mail-user']);
