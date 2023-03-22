@@ -29,7 +29,7 @@
 
     <!--formulaire-->
     <div class="bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-32 xl:rounded-lg">
-        <form action="" method="post" class="flex flex-col">
+        <form action="content/formulaires-traitement/traitrement-inscription.php" method="POST" class="flex flex-col">
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Nom" name="nom-user" />
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Prénom" name="prenom-user" />
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email" placeholder="Adresse email" name="mail-user" />
@@ -52,7 +52,7 @@
                         <input class="hidden js-repassword-toggle focus:border-transparent focus:ring-0" id="retoggle" type="checkbox" />
                         <label class="bg-gray-300 hover:bg-gray-400 rounded-full px-2 py-1 text-sm text-gray-600 font-mono cursor-pointer js-repassword-label" for="retoggle">Voir</label>
                         </div>
-                        <input class="w-full js-repassword rounded-full focus:border-transparent focus:ring-0" id="repassword" type="password" placeholder="Re-tapez votre mot de passe" name="mdp-user" autocomplete="off" />
+                        <input class="w-full js-repassword rounded-full focus:border-transparent focus:ring-0" id="repassword" type="password" placeholder="Re-tapez votre mot de passe" name="remdp-user" autocomplete="off" />
                     </div>
                     <!---->                    
                     
