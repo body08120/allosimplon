@@ -67,6 +67,7 @@
                     md:px-16 md:py-2 
                     lg:py-4 lg:my-10" />
         </form>
+        <div class="text-[#EAD7D7] text-center hover:underline"><a href="content/formulaires/connexion.php">Cliquez ici pour vous connectez !</a></div>
     </div>
 </div>
 

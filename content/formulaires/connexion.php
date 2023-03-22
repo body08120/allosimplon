@@ -51,9 +51,9 @@
                 md:px-16 md:py-2 
                 lg:py-4 lg:my-10" />
     <form>
+        <div class="text-[#EAD7D7] text-center hover:underline"><a href="content/formulaires/inscription.php">Cliquez ici pour créez un compte !</a></div>
 </div>
 </div>
-
 <!-------------------------------------->
 <div class="h-1 divide-[#412234]"></div>
 
