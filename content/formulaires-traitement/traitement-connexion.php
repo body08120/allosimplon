@@ -19,8 +19,8 @@ $user = $stmt->fetch();
 // Si l'utilisateur est trouvé et que le mot de passe est correct, on ouvre une session pour cet utilisateur
 if ($user && password_verify($password, $user["mdp_user"])) {
     // $_SESSION['id'] = $user['id'];
-    echo "Vous êtes connecté.";
-    // header('location: ../../index.php');
+    // echo "Vous êtes connecté.";
+    header('location: /allosimplon/index.php');
 
 } else {
     echo "Identifiants incorrects.";
