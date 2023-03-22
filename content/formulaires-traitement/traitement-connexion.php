@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('config.php');
+require_once('../../assets/config/config.php');
 
 $email = htmlspecialchars($_POST['mail-user']);
 $password = htmlspecialchars($_POST['mdp-user']);

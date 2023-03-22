@@ -1,7 +1,7 @@
 <?php
 // Paramètres de connexion à la base de données
 define('DB_HOST', 'localhost'); // nom de l'hôte
-define('DB_NAME', 'allosimplon-db'); // nom de la base de données
+define('DB_NAME', 'allosimplon'); // nom de la base de données
 define('DB_USER', 'root'); // nom d'utilisateur de la base de données
 define('DB_PASSWORD', ''); // mot de passe de l'utilisateur de la base de données
 
