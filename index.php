@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('content/formulaires-traitement/config.php');
+require_once('assets/config/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

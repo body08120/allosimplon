@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once('../../assets/config/config.php');
 // $_SESSION['login-mail'] = $_POST['mail-user'];
 // $_SESSION['login-nom'] = $_POST['nom-user'];
 $nom = htmlspecialchars($_POST['nom-user']);
