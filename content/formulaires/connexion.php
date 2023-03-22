@@ -31,7 +31,7 @@
 
     <!--form connexion-->
 <div class=" bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-52 xl:rounded-lg">
-    <form action="" method="post" class="flex flex-col">
+    <form action="content/formulaires-traitement/traitement-connexion.php" method="POST" class="flex flex-col">
         <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email" placeholder="Adresse email" name="mail-user" />
         <!-- password -->
         <div class="relative w-full my-3 focus:border-transparent focus:ring-0 md:my-5">
