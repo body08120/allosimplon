@@ -39,8 +39,7 @@ $stmt->bindParam(5, $hashed_password);
 $stmt->bindParam(6, $role);
 $stmt->execute();
 
-echo 'Utilisateur ajoutée <a href="">Retour Admin</a>';
-
+header('Location: admin-view.php');
 }
 include_once("../../../assets/config/close.php");
 
