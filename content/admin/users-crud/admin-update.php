@@ -32,13 +32,15 @@ if (isset($_POST['update'])) {
         $error = $stmt->errorInfo();
         echo "Error: " . $error[2];
     }
+
 } 
+
 
     if (isset($_GET['id'])) {
 
         $user_id = $_GET['id'];
 
-        $sql = "DELETE FROM users WHERE id_user = :id";
+        $sql = "SELECT * FROM users WHERE id_user = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $user_id);
         $result = $stmt->execute();
@@ -55,9 +57,9 @@ if (isset($_POST['update'])) {
                 $password = $row['mdp_user'];
                 $role = $row['id_role'];
             }
-        
-        ?>
 
+            
+        ?>
         <!DOCTYPE html>
         <html lang="en">
 
@@ -74,7 +76,7 @@ if (isset($_POST['update'])) {
 
             <h2>User Update Form</h2>
 
-            <form action="" method="post">
+            <form action="" method="POST">
 
                 <fieldset>
 
@@ -82,9 +84,9 @@ if (isset($_POST['update'])) {
 
                     First name:<br>
 
-                    <input type="hidden" name="id-user" value="<?php echo $id; ?>">
-                    
                     <input type="text" name="nom-user" value="<?php echo $nom; ?>">
+                    
+                    <input type="hidden" name="id-user" value="<?php echo $id; ?>">
 
                     <br>
 
@@ -112,7 +114,7 @@ if (isset($_POST['update'])) {
 
                     <br>
 
-                    Password:<br>
+                    Role:<br>
 
                     <input type="number" name="id-role" value="<?php echo $role; ?>">
 

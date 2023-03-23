@@ -29,14 +29,15 @@ include_once("../../../assets/config/close.php");
 </head>
 
 <body>
-<?php include('../../includes/navbar.php'); ?>
+    <?php include('../../includes/navbar.php'); ?>
 
     <div class="flex flex-col items-center">
 
-        
+
         <table class="">
 
-            <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">vos utilisateurs</h2>
+            <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">vos utilisateurs
+            </h2>
 
             <thead>
 
@@ -66,57 +67,61 @@ include_once("../../../assets/config/close.php");
                 <?php
 
                 if ($num_rows > 0) {
-                
+
                     // while ($row = $stmt->fetch(PDO::FETCH_ASSOC))   { //retourne la prochaine ligne de résultats sous forme d'un tableau associatif.
-                ?>
+                    ?>
 
-                <?php foreach ($result as $row): ?>
-                    <tr>
-                        <td class="px-2 py-2 border-2">
-                            <?php echo $row['id_user']; ?>
-                        </td>
+                    <?php foreach ($result as $row): ?>
+                        <tr>
+                            <td class="px-2 py-2 border-2">
+                                <?php echo $row['id_user']; ?>
+                            </td>
 
-                        <td class="px-2 py-2 border-2">
-                            <?php echo $row['nom_user']; ?>
-                        </td>
+                            <td class="px-2 py-2 border-2">
+                                <?php echo $row['nom_user']; ?>
+                            </td>
 
-                        <td class="px-2 py-2 border-2">
-                            <?php echo $row['prenom_user']; ?>
-                        </td>
+                            <td class="px-2 py-2 border-2">
+                                <?php echo $row['prenom_user']; ?>
+                            </td>
 
-                        <td class="px-2 py-2 border-2">
-                            <?php echo $row['mail_user']; ?>
-                        </td>
+                            <td class="px-2 py-2 border-2">
+                                <?php echo $row['mail_user']; ?>
+                            </td>
 
-                        <td class="px-2 py-2 border-2">
-                            <?php echo $row['pseudo_user']; ?>
-                        </td>
+                            <td class="px-2 py-2 border-2">
+                                <?php echo $row['pseudo_user']; ?>
+                            </td>
 
-                        <td class="px-2 py-2 border-2">
-                            <?php echo $row['mdp_user']; ?>
-                        </td>
+                            <td class="px-2 py-2 border-2">
+                                <?php echo $row['mdp_user']; ?>
+                            </td>
 
-                        <td class="px-2 py-2 border-2">
-                            <?php echo $row['id_role']; ?>
-                        </td>
+                            <td class="px-2 py-2 border-2">
+                                <?php echo $row['id_role']; ?>
+                            </td>
 
-                        <td class="px-2 py-2 border-2">
-                            <a class="px-2 py-2 border-2 bg-green-400" href="admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a 
-                                class="px-2 py-2 border-2 bg-red-400" href="admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
+                            <td class="px-2 py-2 border-2">
+                                <a class="px-2 py-2 border-2 bg-green-400"
+                                    href="admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a
+                                    class="px-2 py-2 border-2 bg-red-400"
+                                    href="admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
 
-                <?php
-                //  }
+                    <?php
+                    //  }
                 
                 }
-                
+
                 ?>
 
             </tbody>
         </table>
-    <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
+        <a class="underline" href="admin-create.php">Ajouter un utilisateur</a>
+        <br>
+        <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
     </div>
 
 
@@ -126,4 +131,3 @@ include_once("../../../assets/config/close.php");
 </body>
 
 </html>
-
