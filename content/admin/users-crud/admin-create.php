@@ -1,6 +1,6 @@
 <?php
 
-include_once("../../assets/config/config.php");
+include_once("../../../assets/config/config.php");
 
 if (isset($_POST['submit'])) {
 
@@ -41,8 +41,8 @@ $stmt->execute();
 
 echo 'Utilisateur ajoutée <a href="">Retour Admin</a>';
 
-include_once("../../assets/config/close.php");
 }
+include_once("../../../assets/config/close.php");
 
 ?>
 
@@ -60,7 +60,7 @@ include_once("../../assets/config/close.php");
 
 
 <body>
-    <?php include('../includes/navbar.php'); ?>
+    <?php include('../../includes/navbar.php'); ?>
 <div class="flex flex-col items-center">
     <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Créez un utilisateur</h2>
     <form action="" method="POST">
@@ -112,9 +112,10 @@ include_once("../../assets/config/close.php");
         </fieldset>
 
     </form>
+    <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
 </div>
 
-    <?php include('../includes/footer.php'); ?>
+    <?php include('../../includes/footer.php'); ?>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 

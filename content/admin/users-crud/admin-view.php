@@ -1,6 +1,6 @@
 <?php
 
-include_once("../../assets/config/config.php");
+include_once("../../../assets/config/config.php");
 
 $sql = "SELECT * FROM users";
 
@@ -10,6 +10,8 @@ $result = $stmt->fetchAll();
 
 // $num_rows = count($result);
 $num_rows = $stmt->rowCount();
+
+include_once("../../../assets/config/close.php");
 
 
 ?>
@@ -27,12 +29,14 @@ $num_rows = $stmt->rowCount();
 </head>
 
 <body>
+<?php include('../../includes/navbar.php'); ?>
+
     <div class="flex flex-col items-center">
 
         
         <table class="">
 
-            <h2>vos utilisateurs</h2>
+            <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">vos utilisateurs</h2>
 
             <thead>
 
@@ -97,8 +101,8 @@ $num_rows = $stmt->rowCount();
                         </td>
 
                         <td class="px-2 py-2 border-2">
-                            <a class="px-2 py-2 border-2 bg-green-400" href="update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a 
-                                class="px-2 py-2 border-2 bg-red-400" href="delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
+                            <a class="px-2 py-2 border-2 bg-green-400" href="admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a 
+                                class="px-2 py-2 border-2 bg-red-400" href="admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -112,11 +116,13 @@ $num_rows = $stmt->rowCount();
 
             </tbody>
         </table>
-
+    <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
+    <?php include('../../includes/footer.php'); ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 
 </html>
