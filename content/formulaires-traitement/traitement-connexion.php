@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+
+// if ($_SESSION['logged_in'] === true){
+//     header('Location: http://localhost/allosimplon/index.php');
+// }
+
 require_once('../../assets/config/config.php');
 
 $email = htmlspecialchars($_POST['mail-user']);
