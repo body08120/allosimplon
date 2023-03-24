@@ -1,5 +1,12 @@
 <?php
 session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        // Jeton CSRF invalide, traiter l'erreur
+    } else {
+        // Jeton CSRF valide, traiter le formulaire
+    }
+}
 require_once('../../assets/config/config.php');
 $nom = htmlspecialchars($_POST['nom-user']);
 $prenom = htmlspecialchars($_POST['prenom-user']);
