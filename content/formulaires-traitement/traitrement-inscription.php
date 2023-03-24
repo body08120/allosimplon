@@ -31,7 +31,6 @@ if($password !== $repassword) {
 } else {
     
 }
-
 // Hashage du mot de passe avant enregistrement dans la base de données
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 

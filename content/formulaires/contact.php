@@ -33,10 +33,11 @@ session_start();
 
 <!-- form contact -->
 <div class="bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-32 xl:rounded-lg">
-        <form action="" method="post" class="flex flex-col">
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Nom" name="" />
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email" placeholder="Adresse email" name="" />
-            <input class="rounded-[64px] my-3 focus:border-transparent focus:ring-0 md:my-5 h-96" type="text" name="" />
+        <form action="content/formulaires-traitement/traitement-contact.php" method="post" class="flex flex-col">
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Nom" name="nom-user" />
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email" placeholder="Adresse email" name="mail-user" />
+            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Objet" name="motif" />
+            <input class="rounded-[64px] my-3 focus:border-transparent focus:ring-0 md:my-5 h-96" type="text" name="message" />
 
             <!--button form inscription-->
             <input  
