@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once("../../../assets/config/config.php");
 
 if (isset($_POST['submit'])) {

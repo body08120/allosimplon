@@ -6,7 +6,7 @@
   </a>
   <div class="flex items-center md:order-2">
   <?php
-  if(isset($_SESSION['connected']) && $_SESSION['connected'] === true) {
+  if(isset($_SESSION['mail-user']) && $_SESSION['logged_in'] === true) {
     echo'
       <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-[#B49FCC]" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
@@ -34,7 +34,7 @@
           </li>
         </ul>
       </div>'; } else {
-      echo'<div><a href="http://localhost/allosimplon/content/formulaires/connexion.php">Inscription/Connexion</a></div>';
+      echo'<div><a href="http://localhost/allosimplon/content/formulaires/connexion.php">Connectez-vous</a></div>';
     }  
     ?>
       </div>
@@ -57,7 +57,7 @@
         <a href="content/pages/informations.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Plus d'infos</a>
       </li>
       <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Admin</a>
+        <a href="content/admin/panel.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Admin</a>
       </li>
     </ul>
   </div>
