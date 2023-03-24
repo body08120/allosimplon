@@ -33,6 +33,7 @@ if ($user && password_verify($password, $user["mdp_user"])) {
     $_SESSION['logged_in'] = true;
     $_SESSION['mail-user'] = $_POST['mail-user'];
     $_SESSION['pseudo_user'] = $user['pseudo_user'];
+    $_SESSION['role_user'] = $user['id_role'];
 
     header('location: /allosimplon/index.php');
 
