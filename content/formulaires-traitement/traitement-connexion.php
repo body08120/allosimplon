@@ -18,8 +18,8 @@ $user = $stmt->fetch();
 
 // Si l'utilisateur est trouvé et que le mot de passe est correct, on ouvre une session pour cet utilisateur
 if ($user && password_verify($password, $user["mdp_user"])) {
-    // $_SESSION['id'] = $user['id'];
-    // echo "Vous êtes connecté.";
+    $_SESSION['logged_in'] = true;
+    $_SESSION['mail-user'] = $email;
     header('location: /allosimplon/index.php');
 
 } else {
@@ -27,4 +27,3 @@ if ($user && password_verify($password, $user["mdp_user"])) {
     // header('location: error.php');
 }
 ?>
-
