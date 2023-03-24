@@ -32,7 +32,7 @@
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Paramètres</a>
           </li>
           <li>
-            <a href="content/formulaires-traitement/traitement-deconnexion.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Déconnexion</a>
+            <a href="http://localhost/allosimplon/content/formulaires-traitement/traitement-deconnexion.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Déconnexion</a>
           </li>
         </ul>
       </div><?php } else { ?>
