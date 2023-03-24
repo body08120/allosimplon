@@ -22,15 +22,15 @@
           <span class="block text-sm font-medium text-gray-500 truncate"><?php echo $_SESSION['mail-user']; ?></span>
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
-          <li>
+        <!--  <li>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
           </li>
-          <!-- <li>
+           <li>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"></a>
-          </li> -->
+          </li> 
           <li>
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Paramètres</a>
-          </li>
+          </li>-->
           <li>
             <a href="http://localhost/allosimplon/content/formulaires-traitement/traitement-deconnexion.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Déconnexion</a>
           </li>

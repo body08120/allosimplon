@@ -1,9 +1,8 @@
 <?php
 session_start();
-if (!empty($_SESSION['role_user']) && $_SESSION['role_user'] !== $admin) {
+$admin = '2';
+if ($_SESSION['role_user'] != $admin) {
     header('Location: http://localhost/allosimplon/index.php');
-} else {
-    
 }
 include_once("../../../assets/config/config.php");
 
@@ -34,17 +33,17 @@ if (isset($_POST['submit'])) {
     // Hashage du mot de passe avant enregistrement dans la base de données
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-// Enregistrement de l'utilisateur dans la base de données
-$stmt = $pdo->prepare("INSERT INTO users (nom_user, prenom_user, mail_user, pseudo_user, mdp_user, id_role) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bindParam(1, $nom);
-$stmt->bindParam(2, $prenom);
-$stmt->bindParam(3, $email);
-$stmt->bindParam(4, $pseudo);
-$stmt->bindParam(5, $hashed_password);
-$stmt->bindParam(6, $role);
-$stmt->execute();
+    // Enregistrement de l'utilisateur dans la base de données
+    $stmt = $pdo->prepare("INSERT INTO users (nom_user, prenom_user, mail_user, pseudo_user, mdp_user, id_role) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bindParam(1, $nom);
+    $stmt->bindParam(2, $prenom);
+    $stmt->bindParam(3, $email);
+    $stmt->bindParam(4, $pseudo);
+    $stmt->bindParam(5, $hashed_password);
+    $stmt->bindParam(6, $role);
+    $stmt->execute();
 
-header('Location: admin-view.php');
+    header('Location: admin-view.php');
 }
 include_once("../../../assets/config/close.php");
 
@@ -57,6 +56,7 @@ include_once("../../../assets/config/close.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/allosimplon/">
     <title>Admin - Créez un utilisateur</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -65,59 +65,60 @@ include_once("../../../assets/config/close.php");
 
 <body>
     <?php include('../../includes/navbar.php'); ?>
-<div class="flex flex-col items-center">
-    <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Créez un utilisateur</h2>
-    <form action="" method="POST">
+    <div class="flex flex-col items-center">
+        <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Créez un utilisateur
+        </h2>
+        <form action="" method="POST">
 
-        <fieldset class="flex flex-col my-6">
+            <fieldset class="flex flex-col my-6">
 
-            <legend class="underline mt-6">Informations:</legend>
+                <legend class="underline mt-6">Informations:</legend>
 
-            Nom:<br>
+                Nom:<br>
 
-            <input type="text" name="nom-user" required>
+                <input type="text" name="nom-user" required>
 
-            <br>
+                <br>
 
-            Prénom:<br>
+                Prénom:<br>
 
-            <input type="text" name="prenom-user" required>
+                <input type="text" name="prenom-user" required>
 
-            <br>
+                <br>
 
-            Email:<br>
+                Email:<br>
 
-            <input type="email" name="mail-user" required>
+                <input type="email" name="mail-user" required>
 
-            <br>
+                <br>
 
-            Pseudo:<br>
+                Pseudo:<br>
 
-            <input type="text" name="pseudo-user" required>
+                <input type="text" name="pseudo-user" required>
 
-            <br>
+                <br>
 
-            Mdp:<br>
+                Mdp:<br>
 
-            <input type="password" name="mdp-user" required>
+                <input type="password" name="mdp-user" required>
 
-            <br>
+                <br>
 
-            Role:<br>
+                Role:<br>
 
-            <input type="number" name="id-role" placeholder="1=user ou 2=admin" required>
+                <input type="number" name="id-role" placeholder="1=user ou 2=admin" required>
 
-            <br><br>
+                <br><br>
 
-            
-            <input type="submit" name="submit" value="Valider" class="py-1 px-8 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
-            focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0"> 
 
-        </fieldset>
+                <input type="submit" name="submit" value="Valider" class="py-1 px-8 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
+            focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0">
 
-    </form>
-    <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
-</div>
+            </fieldset>
+
+        </form>
+        <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
+    </div>
 
     <?php include('../../includes/footer.php'); ?>
 

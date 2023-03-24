@@ -1,9 +1,8 @@
 <?php
 session_start();
-if (!empty($_SESSION['role_user']) && $_SESSION['role_user'] !== $admin) {
+$admin = '2';
+if ($_SESSION['role_user'] != $admin) {
     header('Location: http://localhost/allosimplon/index.php');
-} else {
-    
 }
 include_once("../../../assets/config/config.php");
 
@@ -38,32 +37,32 @@ if (isset($_POST['update'])) {
         echo "Error: " . $error[2];
     }
 
-} 
+}
 
 
-    if (isset($_GET['id'])) {
+if (isset($_GET['id'])) {
 
-        $user_id = $_GET['id'];
+    $user_id = $_GET['id'];
 
-        $sql = "SELECT * FROM users WHERE id_user = :id";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(':id', $user_id);
-        $result = $stmt->execute();
-        
-        $result = $stmt->fetchAll();
+    $sql = "SELECT * FROM users WHERE id_user = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $user_id);
+    $result = $stmt->execute();
 
-        if ($stmt->rowCount() > 0) {
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $id = $row['id_user'];
-                $nom = $row['nom_user'];
-                $prenom = $row['prenom_user'];
-                $email = $row['mail_user'];
-                $pseudo = $row['pseudo_user'];
-                $password = $row['mdp_user'];
-                $role = $row['id_role'];
-            }
+    $result = $stmt->fetchAll();
 
-            
+    if ($stmt->rowCount() > 0) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $id = $row['id_user'];
+            $nom = $row['nom_user'];
+            $prenom = $row['prenom_user'];
+            $email = $row['mail_user'];
+            $pseudo = $row['pseudo_user'];
+            $password = $row['mdp_user'];
+            $role = $row['id_role'];
+        }
+
+
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -72,7 +71,8 @@ if (isset($_POST['update'])) {
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
+            <base href="/allosimplon/">
+            <title>Update users - Allosimplon</title>
             <script src="https://cdn.tailwindcss.com"></script>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
         </head>
@@ -90,7 +90,7 @@ if (isset($_POST['update'])) {
                     First name:<br>
 
                     <input type="text" name="nom-user" value="<?php echo $nom; ?>">
-                    
+
                     <input type="hidden" name="id-user" value="<?php echo $id; ?>">
 
                     <br>
@@ -140,12 +140,12 @@ if (isset($_POST['update'])) {
 
         <?php
 
-} else{ 
+    } else {
 
-    header('Location: admin-view.php');
-
-} 
+        header('Location: admin-view.php');
 
     }
 
-?> 
+}
+
+?>

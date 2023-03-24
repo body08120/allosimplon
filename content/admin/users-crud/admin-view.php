@@ -1,9 +1,8 @@
 <?php
 session_start();
-if (!empty($_SESSION['role_user']) && $_SESSION['role_user'] !== $admin) {
+$admin = '2';
+if ($_SESSION['role_user'] != $admin) {
     header('Location: http://localhost/allosimplon/index.php');
-} else {
-    
 }
 include_once("../../../assets/config/config.php");
 
@@ -28,7 +27,8 @@ include_once("../../../assets/config/close.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <base href="/allosimplon/">
+    <title>Tableau users - Allosimplon</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -108,9 +108,9 @@ include_once("../../../assets/config/close.php");
 
                             <td class="px-2 py-2 border-2">
                                 <a class="px-2 py-2 border-2 bg-green-400"
-                                    href="admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a
+                                    href="content/admin/users-crud/admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a
                                     class="px-2 py-2 border-2 bg-red-400"
-                                    href="admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
+                                    href="content/admin/users-crud/admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
