@@ -21,9 +21,13 @@ $stmt->execute([$email]);
 $user = $stmt->fetch();
 
 
+
 // Si l'utilisateur est trouvé et que le mot de passe est correct, on ouvre une session pour cet utilisateur
 if ($user && password_verify($password, $user["mdp_user"])) {
     $_SESSION['logged_in'] = true;
+    $_SESSION['mail-user'] = $_POST['mail-user'];
+    $_SESSION['pseudo_user'] = $user['pseudo_user'];
+
     header('location: /allosimplon/index.php');
 
 } else {

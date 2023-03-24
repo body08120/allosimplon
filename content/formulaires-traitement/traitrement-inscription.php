@@ -44,11 +44,10 @@ $stmt->execute();
 
 
 // On stock les données user dans une session
-$_SESSION['nom-user'] = $nom;
-$_SESSION['prenom-user'] = $prenom;
-$_SESSION['mail-user'] = $email;
-$_SESSION['pseudo-user'] = $pseudo;
-$_SESSION['mdp-user'] = $password;
+// $_SESSION['nom-user'] = $nom;
+// $_SESSION['prenom-user'] = $prenom;
+// $_SESSION['pseudo-user'] = $pseudo;
+
 
 
 header('location: ../formulaires/connexion.php');

@@ -6,6 +6,7 @@
   </a>
   <div class="flex items-center md:order-2">
   <?php
+
   if(isset($_SESSION['mail-user']) && $_SESSION['logged_in'] === true) {
     ?>
 
@@ -17,7 +18,7 @@
       <!-- Dropdown menu -->
       <div class="z-50 hidden my-4 text-base list-none bg-[#B49FCC] divide-y divide-[#6D466B] rounded-lg shadow" id="user-dropdown">
         <div class="px-4 py-3">
-          <span class="block text-sm text-gray-900"><?php echo $_SESSION['pseudo-user']; ?></span>
+          <span class="block text-sm text-gray-900"><?php echo $_SESSION['pseudo_user']; ?></span>
           <span class="block text-sm font-medium text-gray-500 truncate"><?php echo $_SESSION['mail-user']; ?></span>
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
