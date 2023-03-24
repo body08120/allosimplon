@@ -1,7 +1,6 @@
 <?php
+session_start();
 require_once('../../assets/config/config.php');
-// $_SESSION['login-mail'] = $_POST['mail-user'];
-// $_SESSION['login-nom'] = $_POST['nom-user'];
 $nom = htmlspecialchars($_POST['nom-user']);
 $prenom = htmlspecialchars($_POST['prenom-user']);
 $email = htmlspecialchars($_POST['mail-user']);
@@ -42,6 +41,15 @@ $stmt->bindParam(3, $email);
 $stmt->bindParam(4, $pseudo);
 $stmt->bindParam(5, $hashed_password);
 $stmt->execute();
+
+
+// On stock les données user dans une session
+$_SESSION['nom-user'] = $nom;
+$_SESSION['prenom-user'] = $prenom;
+$_SESSION['mail-user'] = $email;
+$_SESSION['pseudo-user'] = $pseudo;
+$_SESSION['mdp-user'] = $password;
+
 
 header('location: ../formulaires/connexion.php');
 ?>
