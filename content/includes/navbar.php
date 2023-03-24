@@ -7,7 +7,8 @@
   <div class="flex items-center md:order-2">
   <?php
   if(isset($_SESSION['mail-user']) && $_SESSION['logged_in'] === true) {
-    echo'
+    ?>
+
       <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-[#B49FCC]" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
         <img class="w-10 h-10 rounded-full" src="http://localhost/allosimplon/assets/img/avatar.png" alt="user photo">
@@ -17,7 +18,7 @@
       <div class="z-50 hidden my-4 text-base list-none bg-[#B49FCC] divide-y divide-[#6D466B] rounded-lg shadow" id="user-dropdown">
         <div class="px-4 py-3">
           <span class="block text-sm text-gray-900">user</span>
-          <span class="block text-sm font-medium text-gray-500 truncate">user@gmail.com</span>
+          <span class="block text-sm font-medium text-gray-500 truncate"><?php echo $_SESSION['mail-user']; ?></span>
         </div>
         <ul class="py-2" aria-labelledby="user-menu-button">
           <li>
@@ -33,9 +34,9 @@
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Déconnexion</a>
           </li>
         </ul>
-      </div>'; } else {
-      echo'<div><a href="http://localhost/allosimplon/content/formulaires/connexion.php">Connectez-vous</a></div>';
-    }  
+      </div><?php } else { ?>
+      <div><a href="http://localhost/allosimplon/content/formulaires/connexion.php">Connectez-vous</a></div>
+  <?php  }  
     ?>
       </div>
     <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-900 rounded-lg md:hidden focus:bg-[#B49FCC] focus:outline-none" aria-controls="mobile-menu-2" aria-expanded="false">
