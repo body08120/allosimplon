@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!empty($_SESSION['role_user']) && $_SESSION['role_user'] !== $admin) {
+    header('Location: http://localhost/allosimplon/index.php');
+} else {
+    
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

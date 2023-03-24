@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!empty($_SESSION['role_user']) && $_SESSION['role_user'] !== $admin) {
+    header('Location: http://localhost/allosimplon/index.php');
+} else {
+    
+}
 include_once("../../../assets/config/config.php");
 
 if (isset($_POST['submit'])) {

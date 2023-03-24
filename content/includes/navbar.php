@@ -6,7 +6,7 @@
   </a>
   <div class="flex items-center md:order-2">
   <?php
-
+  $admin = "2";
   if(isset($_SESSION['mail-user']) && $_SESSION['logged_in'] === true) {
     ?>
 
@@ -58,9 +58,11 @@
       <li>
         <a href="content/pages/informations.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Plus d'infos</a>
       </li>
+      <?php if (!empty($_SESSION['role_user']) && $_SESSION['role_user'] == $admin) {?>
       <li>
         <a href="content/admin/panel.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Admin</a>
       </li>
+      <?php } else{ } ?>
     </ul>
   </div>
   </div>
