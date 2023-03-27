@@ -27,7 +27,7 @@ if ($_SESSION['role_user'] != $admin) {
         <div class="flex flex-col justify-around">
             <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a href="content/admin/users-crud/admin-view.php">Gestion des
                     utilisateurs</a></div>
-            <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a href="films-crud/admin-view.php">Gestion des
+            <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a href="content/admin/films-crud/admin-view.php">Gestion des
                     films</a></div>
         </div>
     </section>
