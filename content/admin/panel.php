@@ -18,13 +18,13 @@ if ($_SESSION['role_user'] != $admin) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="bg-[#412234] font-mono text-black">
 
     <?php include('../includes/navbar.php'); ?>
 
     <section class="flex flex-col items-center">
-        <h1>Administration</h1>
-        <div class="flex justify-around">
+        <h1 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Administration</h1>
+        <div class="flex flex-col justify-around">
             <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a href="content/admin/users-crud/admin-view.php">Gestion des
                     utilisateurs</a></div>
             <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a href="films-crud/admin-view.php">Gestion des

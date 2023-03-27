@@ -33,7 +33,7 @@ include_once("../../../assets/config/close.php");
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="bg-[#412234] font-mono">
     <?php include('../../includes/navbar.php'); ?>
 
     <div class="flex flex-col items-center">
@@ -46,7 +46,7 @@ include_once("../../../assets/config/close.php");
 
             <thead>
 
-                <tr>
+                <tr class="text-[#B49FCC]">
 
                     <th class="px-2 py-2 border-2">ID</th>
 
@@ -77,7 +77,7 @@ include_once("../../../assets/config/close.php");
                     ?>
 
                     <?php foreach ($result as $row): ?>
-                        <tr>
+                        <tr class="text-[#EAD7D7]">
                             <td class="px-2 py-2 border-2">
                                 <?php echo $row['id_user']; ?>
                             </td>
@@ -107,9 +107,9 @@ include_once("../../../assets/config/close.php");
                             </td>
 
                             <td class="px-2 py-2 border-2">
-                                <a class="px-2 py-2 border-2 bg-green-400"
+                                <a class="px-2 py-2 border-2 bg-green-400 text-[#6D466B]"
                                     href="content/admin/users-crud/admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a
-                                    class="px-2 py-2 border-2 bg-red-400"
+                                    class="px-2 py-2 border-2 bg-red-400 text-[#6D466B]"
                                     href="content/admin/users-crud/admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
                             </td>
                         </tr>
@@ -124,9 +124,9 @@ include_once("../../../assets/config/close.php");
 
             </tbody>
         </table>
-        <a class="underline" href="content/admin/users-crud/admin-create.php">Ajouter un utilisateur</a>
+        <a class="underline text-[#EAD7D7]" href="content/admin/users-crud/admin-create.php">Ajouter un utilisateur</a>
         <br>
-        <a class="underline" href="content/admin/panel.php">Retour au panneau d'administration</a>
+        <a class="underline text-[#EAD7D7]" href="content/admin/panel.php">Retour au panneau d'administration</a>
     </div>
 
 

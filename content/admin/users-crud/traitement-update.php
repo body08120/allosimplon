@@ -34,7 +34,7 @@ if (isset($_POST['update'])) {
     $result = $stmt->execute();
 
     if ($result) {
-        echo "Record updated successfully.";
+        echo 'Record updated successfully. <br> <a href="admin-view.php">Retour au panneau administration</a>';
     } else {
         $error = $stmt->errorInfo();
         echo "Error: " . $error[2];

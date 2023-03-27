@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 
 
     if ($result) {
-        echo "Record deleted successfully.";
+        echo 'Record deleted successfully. <br> <a href="admin-view.php">Retour au panneau administration</a>';
     } else {
         echo "Error: " . $stmt->errorInfo()[2];
     }
