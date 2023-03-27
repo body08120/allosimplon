@@ -117,7 +117,7 @@ include_once("../../../assets/config/close.php");
             </fieldset>
 
         </form>
-        <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
+        <a class="underline" href="content/admin/panel.php">Retour au panneau d'administration</a>
     </div>
 
     <?php include('../../includes/footer.php'); ?>

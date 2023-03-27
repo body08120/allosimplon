@@ -124,9 +124,9 @@ include_once("../../../assets/config/close.php");
 
             </tbody>
         </table>
-        <a class="underline" href="admin-create.php">Ajouter un utilisateur</a>
+        <a class="underline" href="content/admin/users-crud/admin-create.php">Ajouter un utilisateur</a>
         <br>
-        <a class="underline" href="../panel.php">Retour au panneau d'administration</a>
+        <a class="underline" href="content/admin/panel.php">Retour au panneau d'administration</a>
     </div>
 
 
