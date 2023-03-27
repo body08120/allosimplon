@@ -18,6 +18,9 @@ if (isset($_POST['update'])) {
     $password = $_POST['mdp-user'];
     $role = $_POST['id-role'];
 
+    // Hashage du mot de passe avant enregistrement dans la base de données
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
     //On prépare la reqûte de modification et puis on l'exécute 
     $sql = "UPDATE users SET nom_user=:nom, prenom_user=:prenom, mail_user=:email, pseudo_user=:pseudo, mdp_user=:password, id_role=:role WHERE id_user=:id";
     $stmt = $pdo->prepare($sql);
@@ -25,9 +28,9 @@ if (isset($_POST['update'])) {
     $stmt->bindParam(':prenom', $prenom);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':pseudo', $pseudo);
-    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':password', $hashed_password);
     $stmt->bindParam(':role', $role);
-    // $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':id', $id);
     $result = $stmt->execute();
 
     if ($result) {
