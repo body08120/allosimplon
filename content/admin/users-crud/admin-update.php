@@ -19,18 +19,18 @@ if (isset($_GET['id'])) {
     $row_count = $stmt->rowCount();
     $result = $stmt->fetchAll();
 
-    if(is_array($result)) {
-    if ($row_count > 0) {
+    if (is_array($result)) {
+        if ($row_count > 0) {
 
-        foreach ($result as $row) {
-            $id = $row['id_user'];
-            $nom = $row['nom_user'];
-            $prenom = $row['prenom_user'];
-            $email = $row['mail_user'];
-            $pseudo = $row['pseudo_user'];
-            $password = $row['mdp_user'];
-            $role = $row['id_role'];
-        }
+            foreach ($result as $row) {
+                $id = $row['id_user'];
+                $nom = $row['nom_user'];
+                $prenom = $row['prenom_user'];
+                $email = $row['mail_user'];
+                $pseudo = $row['pseudo_user'];
+                $password = $row['mdp_user'];
+                $role = $row['id_role'];
+            }
 
             ?>
 
@@ -47,61 +47,73 @@ if (isset($_GET['id'])) {
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
             </head>
 
-            <body>
+            <body class="bg-[#412234] font-mono text-[#B49FCC]">
 
-                <h2>User Update Form</h2>
+                <?php include('../../includes/navbar.php'); ?>
 
-                <form action="content/admin/users-crud/traitement-update.php" method="POST">
+                <section class="flex flex-col items-center">
 
-                    <fieldset>
+                    <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">User Update Form
+                    </h2>
 
-                        <legend>Personal information:</legend>
+                    <form action="content/admin/users-crud/traitement-update.php" method="POST">
 
-                        First name:<br>
+                        <fieldset class="flex flex-col items-center">
 
-                        <input type="text" name="nom-user" value="<?php echo $nom; ?>">
+                            <legend>Informations du compte</legend>
 
-                        <input type="hidden" name="id-user" value="<?php echo $id; ?>">
+                            <span>Nom:</span><br>
 
-                        <br>
+                            <input type="text" name="nom-user" value="<?php echo $nom; ?>">
 
-                        Last name:<br>
+                            <input type="hidden" name="id-user" value="<?php echo $id; ?>">
 
-                        <input type="text" name="prenom-user" value="<?php echo $prenom; ?>">
+                            <br>
 
-                        <br>
+                            <span>Prénom:</span><br>
 
-                        Email:<br>
+                            <input type="text" name="prenom-user" value="<?php echo $prenom; ?>">
 
-                        <input type="email" name="mail-user" value="<?php echo $email; ?>">
+                            <br>
 
-                        <br>
+                            <span>Email:</span><br>
 
-                        Pseudo:<br>
+                            <input type="email" name="mail-user" value="<?php echo $email; ?>">
 
-                        <input type="text" name="pseudo-user" value="<?php echo $pseudo; ?>">
+                            <br>
 
-                        <br>
+                            <span>Pseudonyme:</span><br>
 
-                        Password:<br>
+                            <input type="text" name="pseudo-user" value="<?php echo $pseudo; ?>">
 
-                        <input type="password" name="mdp-user" value="<?php echo $password; ?>">
+                            <br>
 
-                        <br>
+                            <span>Mot de passe:</span><br>
 
-                        Role:<br>
+                            <input type="password" name="mdp-user" value="<?php echo $password; ?>">
 
-                        <input type="number" name="id-role" value="<?php echo $role; ?>">
+                            <br>
 
-                        <br>
+                            <span>Rôle:</span><br><span>1 = utilisateur <br> 2 = admin</span><br>
 
-                        <br><br>
+                            <input type="number" name="id-role" value="<?php echo $role; ?>">
 
-                        <input type="submit" value="Update" name="update">
+                            <br>
 
-                    </fieldset>
+                            <br><br>
 
-                </form>
+                            <input type="submit" value="Update" name="update" class="py-1 px-8 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
+                            focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0">
+
+                        </fieldset>
+
+                    </form>
+                    <br>
+                    <a class="underline text-[#EAD7D7]" href="content/admin/panel.php">Retour au panneau d'administration</a>
+                </section>
+
+
+                <?php include('../../includes/footer.php'); ?>
 
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
             </body>
@@ -110,7 +122,7 @@ if (isset($_GET['id'])) {
 
             <?php
 
-    } 
+        }
     } else {
 
         // header('Location: admin-view.php');

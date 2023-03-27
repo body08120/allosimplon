@@ -63,7 +63,7 @@ include_once("../../../assets/config/close.php");
 </head>
 
 
-<body>
+<body class="bg-[#412234] font-mono text-[#B49FCC]">
     <?php include('../../includes/navbar.php'); ?>
     <div class="flex flex-col items-center">
         <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Créez un utilisateur
