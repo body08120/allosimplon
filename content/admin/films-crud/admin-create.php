@@ -4,33 +4,6 @@ $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
     header('Location: http://localhost/allosimplon/index.php');
 }
-// include_once("../../../assets/config/config.php");
-
-
-// if (isset($_POST['submit'])) {
-
-//     // On stock les données envoyer dans des variables
-//     $affiche = $_POST['img_film'];
-//     $titre = $_POST['nom_film'];
-//     $date = $_POST['date_film'];
-//     $synopsis = $_POST['synopsis_film'];
-//     $ba = $_POST['ba_film'];
-
-//     // Enregistrement du film dans la db
-//     $stmt = $pdo->prepare("INSERT INTO films (img_film, nom_film, date_film, synopsis_film, ba_film) VALUES (?, ?, ?, ?, ?)");
-//     $stmt->bindParam(1, $affiche);
-//     $stmt->bindParam(2, $titre);
-//     $stmt->bindParam(3, $date);
-//     $stmt->bindParam(4, $synopsis);
-//     $stmt->bindParam(5, $ba);
-//     $stmt->execute();
-
-//     header('Location: films_genre.php');
-// } else {
-//     echo 'Une erreur est survenue, <a href="admin-create.php">Cliquez pour réessayer</a>';
-// }
-// include_once("../../../assets/config/close.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +25,7 @@ if ($_SESSION['role_user'] != $admin) {
     <div class="flex flex-col items-center">
         <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Ajoutez un film
         </h2>
-        <form action="content/admin/films-crud/create-film.php" method="POST">
+        <form action="content/admin/films-crud/traitement/create-film.php" method="POST">
 
             <fieldset class="flex flex-col my-6">
 

@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     $stmt->bindParam(5, $ba);
     $stmt->execute();
 
-    header('Location: films_genre.php');
+    header('Location: film_genre.php');
 } else {
     echo 'Une erreur est survenue, <a href="admin-create.php">Cliquez pour réessayer</a>';
 }
