@@ -4,7 +4,7 @@ $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
     header('Location: http://localhost/allosimplon/index.php');
 }
-include_once("../../../assets/config/config.php");
+include_once("../../../../assets/config/config.php");
 
 
 if (isset($_POST['submit'])) {
@@ -25,7 +25,11 @@ if (isset($_POST['submit'])) {
     $stmt->bindParam(5, $ba);
     $stmt->execute();
 
-    header('Location: film_genre.php');
+    $id_film = $pdo->lastInsertId();
+    $_SESSION['id_film'] = $id_film;
+
+
+    header('Location: ../film_genre.php');
 } else {
     echo 'Une erreur est survenue, <a href="admin-create.php">Cliquez pour réessayer</a>';
 }
