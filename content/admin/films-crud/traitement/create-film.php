@@ -26,6 +26,7 @@ if (isset($_POST['submit'])) {
     $stmt->execute();
 
     $id_film = $pdo->lastInsertId();
+    
     $_SESSION['id_film'] = $id_film;
 
 

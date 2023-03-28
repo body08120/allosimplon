@@ -73,6 +73,9 @@ $realisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                                             focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0" />
             </fieldset>
         </form>
+
+        <a class="underline" href="content/admin/panel.php">Retour au panneau d'administration</a>
+
     </div>
 
     <?php include('../../includes/footer.php'); ?>
