@@ -26,7 +26,7 @@ if (isset($_POST['action'])) {
         $stmt->bindParam(2, $id_film);
         $stmt->execute();
 
-        header('Location: ../admin-view.php');
+        header('Location: confirm_acteur.php');
 
 
     } elseif ($_POST['action'] == 'ajouter') {
@@ -55,7 +55,7 @@ if (isset($_POST['action'])) {
         $stmt->bindParam(2, $id_film);
         $stmt->execute();
 
-        header('Location: ../admin-view.php');
+        header('Location: confirm_acteur.php');
 
     }
 }
