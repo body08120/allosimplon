@@ -109,7 +109,7 @@ if (isset($_GET['id'])) {
 
                     </form>
                     <br>
-                    <a class="underline text-[#EAD7D7]" href="content/admin/panel.php">Retour au panneau d'administration</a>
+                    <a class="underline text-[#EAD7D7]" href="content/admin/users-crud/admin-view.php">Retour à la gestion des utilisateurs</a>
                 </section>
 
 
