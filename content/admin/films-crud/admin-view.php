@@ -107,7 +107,7 @@ include_once("../../../assets/config/close.php");
                                 <a class="px-2 py-2 border-2 bg-green-400 text-[#6D466B]"
                                     href="content/admin/films-crud/admin-update.php?id=<?php echo $row['id_film']; ?>">Edit</a>&nbsp;<a
                                     class="px-2 py-2 border-2 bg-red-400 text-[#6D466B]"
-                                    href="content/admin/films-crud/admin-delete.php?id=<?php echo $row['id_film']; ?>">Delete</a>
+                                    href="content/admin/films-crud/traitement/delete-film.php?id=<?php echo $row['id_film']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
