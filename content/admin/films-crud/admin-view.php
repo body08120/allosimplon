@@ -121,7 +121,7 @@ include_once("../../../assets/config/close.php");
 
             </tbody>
         </table>
-        <a class="underline text-[#EAD7D7]" href="content/admin/users-crud/admin-create.php">Ajouter un utilisateur</a>
+        <a class="underline text-[#EAD7D7]" href="content/admin/films-crud/admin-create.php">Ajouter un film</a>
         <br>
         <a class="underline text-[#EAD7D7]" href="content/admin/panel.php">Retour au panneau d'administration</a>
     </div>

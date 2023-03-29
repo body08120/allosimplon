@@ -68,7 +68,7 @@ if ($_SESSION['role_user'] != $admin) {
             </fieldset>
 
         </form>
-        <a class="underline" href="content/admin/panel.php">Retour au panneau d'administration</a>
+        <a class="underline" href="content/admin/films-crud/admin-view.php">Retour à la gestion des films</a>
     </div>
 
     <?php include('../../includes/footer.php'); ?>
