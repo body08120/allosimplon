@@ -101,16 +101,13 @@ include_once("../../../assets/config/close.php");
                             <td class="px-2 py-2 border-2">
                                 <?php echo $row['ba_film']; ?>
                             </td>
-<!-- 
-                            <td class="px-2 py-2 border-2">
-                                <?php //echo $row['id_role']; ?>
-                            </td> -->
+
 
                             <td class="px-2 py-2 border-2">
                                 <a class="px-2 py-2 border-2 bg-green-400 text-[#6D466B]"
-                                    href="content/admin/users-crud/admin-update.php?id=<?php echo $row['id_film']; ?>">Edit</a>&nbsp;<a
+                                    href="content/admin/films-crud/admin-update.php?id=<?php echo $row['id_film']; ?>">Edit</a>&nbsp;<a
                                     class="px-2 py-2 border-2 bg-red-400 text-[#6D466B]"
-                                    href="content/admin/users-crud/admin-delete.php?id=<?php echo $row['id_film']; ?>">Delete</a>
+                                    href="content/admin/films-crud/admin-delete.php?id=<?php echo $row['id_film']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
