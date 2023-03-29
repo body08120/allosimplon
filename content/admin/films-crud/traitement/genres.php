@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
     $stmt->bindParam(2, $id_film);
     $stmt->execute();
 
-    header('Location: ../film_realisateur.php');
+    header('Location: confirm_genre.php');
 
 
 } else {
