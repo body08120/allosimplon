@@ -26,7 +26,7 @@ if (isset($_POST['action'])) {
         $stmt->bindParam(2, $id_film);
         $stmt->execute();
 
-        header('Location: ../film_acteur.php');
+        header('Location: confirm_realisateur.php');
 
 
     } elseif ($_POST['action'] == 'ajouter') {
@@ -53,7 +53,7 @@ if (isset($_POST['action'])) {
         $stmt->bindParam(2, $id_film);
         $stmt->execute();
 
-        header('Location: ../film_acteur.php');
+        header('Location: confirm_realisateur.php');
 
     }
 }
