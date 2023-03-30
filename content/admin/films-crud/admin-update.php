@@ -11,13 +11,39 @@ if (isset($_GET['id'])) {
 
     $film_id = $_GET['id'];
 
-    $sql = "SELECT * FROM films WHERE id_film = :id";
+    $sql = "SELECT films.id_film, films.img_film, films.nom_film, films.date_film, films.synopsis_film, films.ba_film, 
+            
+            -- On groupe les genres, réalisateurs, acteurs si besoin
+            GROUP_CONCAT(genres.nom_genre SEPARATOR ', ') AS genres,
+            GROUP_CONCAT(realisateurs.nom_realisateur SEPARATOR ', ') AS realisateurs,
+            GROUP_CONCAT(acteurs.nom_acteur SEPARATOR ', ') AS acteurs
+            FROM films
+
+        -- On joint le genre
+        LEFT JOIN possede ON films.id_film = possede.id_film
+        LEFT JOIN genres ON genres.id_genre = possede.id_genre
+
+        -- On joint le réalisateur
+        LEFT JOIN tourner ON films.id_film = tourner.id_film
+        LEFT JOIN realisateurs ON realisateurs.id_realisateur = tourner.id_realisateur
+
+        -- On joint l'acteur
+        LEFT JOIN possede2 ON films.id_film = possede2.id_film
+        LEFT JOIN acteurs ON acteurs.id_acteur = possede2.id_acteur
+            
+            WHERE films.id_film = :id
+            GROUP BY films.id_film";
+
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':id', $film_id);
     $result = $stmt->execute();
 
     $row_count = $stmt->rowCount();
     $result = $stmt->fetchAll();
+
+    // var_dump($result);
+    // die();
+
 
     if (is_array($result)) {
         if ($row_count > 0) {
@@ -29,9 +55,19 @@ if (isset($_GET['id'])) {
                 $date = $row['date_film'];
                 $synopsis = $row['synopsis_film'];
                 $ba = $row['ba_film'];
-                // $role = $row['id_role'];
+                $genres = $row['genres'];
+                $realisateurs = $row['realisateurs'];
+                $acteurs = $row['acteurs'];
             }
 
+            // On convertit le string en array
+            $genres = explode(", ", $genres);
+            $realisateurs = explode(", ", $realisateurs);
+            $acteurs = explode(", ", $acteurs);
+
+
+            // var_dump($genres);
+            // die();
             ?>
 
             <!DOCTYPE html>
@@ -92,6 +128,37 @@ if (isset($_GET['id'])) {
 
                             <input type="text" name="ba-film" value="<?php echo $ba; ?>">
 
+                            <br>
+
+                            <span>Genres:</span><br>
+
+                            <span>
+                                <?php foreach ($genres as $genre):
+                                    echo "$genre <br>";
+                                endforeach; ?>
+                            </span>
+
+                            <br>
+
+                            <span>Réalisateurs:</span><br>
+
+                            <span>
+                                <?php foreach ($realisateurs as $realisateur):
+                                    echo "$realisateur <br>";
+                                endforeach; ?>
+                            </span>
+
+                            <br>
+
+                            <span>Acteurs:</span><br>
+
+                            <span>
+                                <?php foreach ($acteurs as $acteur):
+                                    echo "$acteur <br>";
+                                endforeach; ?>
+                            </span>
+
+
                             <br><br>
 
                             <input type="submit" value="Update" name="update" class="py-1 px-8 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
@@ -101,7 +168,8 @@ if (isset($_GET['id'])) {
 
                     </form>
                     <br>
-                    <a class="underline text-[#EAD7D7]" href="content/admin/films-crud/admin-view.php">Retour à la gestion des films</a>
+                    <a class="underline text-[#EAD7D7]" href="content/admin/films-crud/admin-view.php">Retour à la gestion des
+                        films</a>
                 </section>
 
 
