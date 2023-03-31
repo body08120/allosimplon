@@ -39,63 +39,63 @@ $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <legend>Selectionnez TOUT les genres du film:</legend>
 
             <div>
-                <input type="checkbox" id="genre1" value="<?php echo $genres[0]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre1" value="<?php echo $genres[0]['id_genre']; ?>" name="genres[]">
                 <label for="genre1">
                     <?php echo $genres[0]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre2" value="<?php echo $genres[1]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre2" value="<?php echo $genres[1]['id_genre']; ?>" name="genres[]">
                 <label for="genre2">
                     <?php echo $genres[1]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre3" value="<?php echo $genres[2]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre3" value="<?php echo $genres[2]['id_genre']; ?>" name="genres[]">
                 <label for="genre3">
                     <?php echo $genres[2]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre4" value="<?php echo $genres[3]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre4" value="<?php echo $genres[3]['id_genre']; ?>" name="genres[]">
                 <label for="genre4">
                     <?php echo $genres[3]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre5" value="<?php echo $genres[4]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre5" value="<?php echo $genres[4]['id_genre']; ?>" name="genres[]">
                 <label for="genre5">
                     <?php echo $genres[4]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre6" value="<?php echo $genres[5]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre6" value="<?php echo $genres[5]['id_genre']; ?>" name="genres[]">
                 <label for="genre6">
                     <?php echo $genres[5]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre7" value="<?php echo $genres[6]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre7" value="<?php echo $genres[6]['id_genre']; ?>" name="genres[]">
                 <label for="genre7">
                     <?php echo $genres[6]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre8" value="<?php echo $genres[7]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre8" value="<?php echo $genres[7]['id_genre']; ?>" name="genres[]">
                 <label for="genre8">
                     <?php echo $genres[7]['nom_genre']; ?>
                 </label>
             </div>
 
             <div>
-                <input type="checkbox" id="genre9" value="<?php echo $genres[8]['nom_genre']; ?>" name="genres[]">
+                <input type="checkbox" id="genre9" value="<?php echo $genres[8]['id_genre']; ?>" name="genres[]">
                 <label for="genre9">
                     <?php echo $genres[8]['nom_genre']; ?>
                 </label>
