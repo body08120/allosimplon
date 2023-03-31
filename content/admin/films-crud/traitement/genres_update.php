@@ -58,7 +58,7 @@ if (isset($_GET['id'])) {
             // echo 'up pas réussi';
         }
 
-        // header('Location: ../admin-view.php');
+        header('Location: ../admin-update.php?id=' . $film_id);
         // Renvoyez sur l'update
    } }  else {
         echo "Veuillez selectionnez au moins un champ";
