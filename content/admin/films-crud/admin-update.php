@@ -14,9 +14,9 @@ if (isset($_GET['id'])) {
     $sql = "SELECT films.id_film, films.img_film, films.nom_film, films.date_film, films.synopsis_film, films.ba_film, 
             
             -- On groupe les genres, réalisateurs, acteurs si besoin
-            GROUP_CONCAT(genres.nom_genre SEPARATOR ', ') AS genres,
-            GROUP_CONCAT(realisateurs.nom_realisateur SEPARATOR ', ') AS realisateurs,
-            GROUP_CONCAT(acteurs.nom_acteur SEPARATOR ', ') AS acteurs
+            GROUP_CONCAT(DISTINCT genres.nom_genre SEPARATOR ', ') AS genres,
+            GROUP_CONCAT(DISTINCT realisateurs.nom_realisateur SEPARATOR ', ') AS realisateurs,
+            GROUP_CONCAT(DISTINCT acteurs.nom_acteur SEPARATOR ', ') AS acteurs
             FROM films
 
         -- On joint le genre

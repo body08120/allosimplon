@@ -53,7 +53,8 @@ if (isset($_GET['id'])) {
         header('Location: ../admin-update.php?id=' . $film_id);
         // Renvoyez sur l'update
    } }  else {
-        echo "Veuillez selectionnez au moins un champ";
+        echo '<a href="../admin-update.php?id='. $film_id .'">Veuillez selectionnez au moins un champ</a>';
+        // header('Location: ../admin-update.php?id=' . $film_id);
     }
 }
 ?>
