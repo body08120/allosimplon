@@ -20,14 +20,6 @@ if (isset($_GET['id'])) {
         include_once("../../../../assets/config/config.php");
 
 
-        // On récupère les check box, qui contiennent comme valeur l'id des genres et les stocks dans un tableau
-        // $checkbox1 = $_POST['genres'];
-        // // On crée une variable
-        // $chk = "";
-        // // On stock le tout dans la variable qu'on vient de créer 
-        // foreach ($checkbox1 as $chk1) {
-        //     $chk .= $chk1 . ",";
-        // }
 
         // On récup les données
         $genre_ids = $_POST['genres'];
