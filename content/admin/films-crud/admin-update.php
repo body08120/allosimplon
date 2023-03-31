@@ -131,16 +131,18 @@ if (isset($_GET['id'])) {
                             <br>
 
                             <span>Genres:</span><br>
-
+                            
                             <span>
                                 <?php foreach ($genres as $genre):
                                     echo "$genre <br>";
                                 endforeach; ?>
                             </span>
-
+                            
+                            <a class="underline text-[#EAD7D7]" href="content/admin/films-crud/film_genre_update.php?id=<?php echo $film_id; ?>" >Modifiez les genres</a>
                             <br>
 
                             <span>Réalisateurs:</span><br>
+
 
                             <span>
                                 <?php foreach ($realisateurs as $realisateur):
