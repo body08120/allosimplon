@@ -166,6 +166,9 @@ if (isset($_GET['id'])) {
                                 endforeach; ?>
                             </span>
 
+                            <a class="underline text-[#EAD7D7]"
+                                href="content/admin/films-crud/film_acteur_update.php?id=<?php echo $film_id; ?>">Modifiez les
+                                acteurs</a>
 
                             <br><br>
 
