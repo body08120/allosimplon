@@ -155,7 +155,7 @@ if (isset($_GET['id'])) {
 
                             <a class="underline text-[#EAD7D7]"
                                 href="content/admin/films-crud/film_realisateur_update.php?id=<?php echo $film_id; ?>">Modifiez les
-                                genres</a>
+                                réalisateurs</a>
                             <br>
 
                             <span>Acteurs:</span><br>
