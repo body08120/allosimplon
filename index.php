@@ -13,6 +13,7 @@ $films = $stmt->fetchAll();
 
 // var_dump($films[0][0], $films[0][1]);
 // var_dump($films);
+// die();
 
 
 ?>
@@ -35,7 +36,7 @@ $films = $stmt->fetchAll();
   <link rel="stylesheet" href="http://localhost/allosimplon/assets/css/slider-film.css">
   <style>
     .owl-theme .item {
-      height: 312px;
+      height: auto;
     }
   </style>
 </head>
@@ -114,28 +115,28 @@ $films = $stmt->fetchAll();
   <div class="relative overflow-hidden">
 
     <!--slider top-10 -->
-    <section>
-      <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Derniers ajouts
+    <section class="my-9">
+      <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em] my-6">Nos derniers ajouts
       </h2>
       <!-- owl.carousel -->
       <div class="owl-carousel owl-theme">
         <div class="h-72 item">
-          <a href=""><img class="h-full" src="<?php echo $films[0][1]; ?>" alt="<?php echo $films[0][2]; ?>"> </a>
+          <a href="content/pages/film.php?id=<?php echo $films[0][0]; ?>"><img class="h-full" src="<?php echo $films[0][1]; ?>" alt="<?php echo $films[0][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href=""><img class="h-full" src="<?php echo $films[1][1]; ?>" alt="<?php echo $films[1][2]; ?>"> </a>
+          <a href="content/pages/film.php?id=<?php echo $films[1][0]; ?>"><img class="h-full" src="<?php echo $films[1][1]; ?>" alt="<?php echo $films[1][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href=""><img class="h-full" src="<?php echo $films[2][1]; ?>" alt="<?php echo $films[2][2]; ?>"> </a>
+          <a href="content/pages/film.php?id=<?php echo $films[2][0]; ?>"><img class="h-full" src="<?php echo $films[2][1]; ?>" alt="<?php echo $films[2][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href=""><img class="h-full" src="<?php echo $films[3][1]; ?>" alt="<?php echo $films[3][2]; ?>"> </a>
+          <a href="content/pages/film.php?id=<?php echo $films[3][0]; ?>"><img class="h-full" src="<?php echo $films[3][1]; ?>" alt="<?php echo $films[3][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href=""><img class="h-full" src="<?php echo $films[4][1]; ?>" alt="<?php echo $films[4][2]; ?>"> </a>
+          <a href="content/pages/film.php?id=<?php echo $films[4][0]; ?>"><img class="h-full" src="<?php echo $films[4][1]; ?>" alt="<?php echo $films[4][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href=""><img class="h-full" src="<?php echo $films[5][1]; ?>" alt="<?php echo $films[5][2]; ?>"> </a>
+          <a href="content/pages/film.php?id=<?php echo $films[5][0]; ?>"><img class="h-full" src="<?php echo $films[5][1]; ?>" alt="<?php echo $films[5][2]; ?>"> </a>
         </div>
       </div>
     </section>
