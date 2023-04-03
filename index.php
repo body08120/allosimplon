@@ -1,6 +1,20 @@
 <?php
 session_start();
 require_once('assets/config/config.php');
+
+$sql = "SELECT id_film, img_film, nom_film
+        FROM films
+        ORDER BY id_film
+        DESC
+        LIMIT 6";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$films = $stmt->fetchAll();
+
+// var_dump($films[0][0], $films[0][1]);
+// var_dump($films);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +27,17 @@ require_once('assets/config/config.php');
   <title>AlloSimplon - Accueil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  </link>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  </link>
   <link rel="stylesheet" href="http://localhost/allosimplon/assets/css/slider-film.css">
+  <style>
+    .owl-theme .item {
+      height: 312px;
+    }
+  </style>
 </head>
 
 <body class="bg-[#412234] font-mono">
@@ -91,30 +113,32 @@ require_once('assets/config/config.php');
 
   <div class="relative overflow-hidden">
 
-  <!--slider top-10 -->
-  <section>
-  <!-- owl.carousel -->
-<div class="owl-carousel owl-theme">
-  <div class="item">
-    <a href=""><img class="h-full" src="https://picsum.photos/id/11/1920/1080" alt="test"> </a>
-  </div>
-  <div class="item">
-    <a href=""><img class="h-full" src="https://picsum.photos/id/12/1920/1080" alt="test"> </a>
-  </div>
-  <div class="item">
-    <a href=""><img class="h-full" src="https://picsum.photos/id/13/1920/1080" alt="test"> </a>
-  </div>
-  <div class="item">
-    <a href=""><img class="h-full" src="https://picsum.photos/id/14/1920/1080" alt="test"> </a>
-  </div>
-  <div class="item">
-    <a href=""><img class="h-full" src="https://picsum.photos/id/15/1920/1080" alt="test"> </a>
-  </div>
-  <div class="item">
-    <a href=""><img class="h-full" src="https://picsum.photos/id/16/1920/1080" alt="test"> </a>
-  </div>
-</div>
-</section>
+    <!--slider top-10 -->
+    <section>
+      <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Derniers ajouts
+      </h2>
+      <!-- owl.carousel -->
+      <div class="owl-carousel owl-theme">
+        <div class="h-72 item">
+          <a href=""><img class="h-full" src="<?php echo $films[0][1]; ?>" alt="<?php echo $films[0][2]; ?>"> </a>
+        </div>
+        <div class="item">
+          <a href=""><img class="h-full" src="<?php echo $films[1][1]; ?>" alt="<?php echo $films[1][2]; ?>"> </a>
+        </div>
+        <div class="item">
+          <a href=""><img class="h-full" src="<?php echo $films[2][1]; ?>" alt="<?php echo $films[2][2]; ?>"> </a>
+        </div>
+        <div class="item">
+          <a href=""><img class="h-full" src="<?php echo $films[3][1]; ?>" alt="<?php echo $films[3][2]; ?>"> </a>
+        </div>
+        <div class="item">
+          <a href=""><img class="h-full" src="<?php echo $films[4][1]; ?>" alt="<?php echo $films[4][2]; ?>"> </a>
+        </div>
+        <div class="item">
+          <a href=""><img class="h-full" src="<?php echo $films[5][1]; ?>" alt="<?php echo $films[5][2]; ?>"> </a>
+        </div>
+      </div>
+    </section>
 
     <!--form-newsletters-->
 
