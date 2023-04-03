@@ -57,112 +57,113 @@ include_once("../../../assets/config/close.php");
 
 <body class="bg-[#412234] font-mono">
     <?php include('../../includes/navbar.php'); ?>
+    <section>
+        <div class="flex flex-col items-center">
 
-    <div class="flex flex-col items-center">
 
+            <table class="">
 
-        <table class="">
+                <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">vos films
+                </h2>
 
-            <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">vos films
-            </h2>
+                <thead>
 
-            <thead>
+                    <tr class="text-[#B49FCC]">
 
-                <tr class="text-[#B49FCC]">
+                        <th class="px-2 py-2 border-2">ID</th>
 
-                    <th class="px-2 py-2 border-2">ID</th>
+                        <th class="px-2 py-2 border-2">Image</th>
 
-                    <th class="px-2 py-2 border-2">Image</th>
+                        <th class="px-2 py-2 border-2">Titre</th>
 
-                    <th class="px-2 py-2 border-2">Titre</th>
+                        <th class="px-2 py-2 border-2">Date</th>
 
-                    <th class="px-2 py-2 border-2">Date</th>
+                        <th class="px-2 py-2 border-2">Synopsis</th>
 
-                    <th class="px-2 py-2 border-2">Synopsis</th>
+                        <th class="px-2 py-2 border-2">Bande Annonce</th>
 
-                    <th class="px-2 py-2 border-2">Bande Annonce</th>
+                        <th class="px-2 py-2 border-2">Genres</th>
 
-                    <th class="px-2 py-2 border-2">Genres</th>
+                        <th class="px-2 py-2 border-2">Réalisateurs</th>
 
-                    <th class="px-2 py-2 border-2">Réalisateurs</th>
+                        <th class="px-2 py-2 border-2">Acteurs</th>
 
-                    <th class="px-2 py-2 border-2">Acteurs</th>
+                        <th class="px-2 py-2 border-2">Action</th>
 
-                    <th class="px-2 py-2 border-2">Action</th>
+                    </tr>
 
-                </tr>
+                </thead>
 
-            </thead>
+                <tbody>
+                    <?php
 
-            <tbody>
-                <?php
+                    if ($num_rows > 0) {
 
-                if ($num_rows > 0) {
+                        // while ($row = $stmt->fetch(PDO::FETCH_ASSOC))   { //retourne la prochaine ligne de résultats sous forme d'un tableau associatif.
+                        ?>
 
-                    // while ($row = $stmt->fetch(PDO::FETCH_ASSOC))   { //retourne la prochaine ligne de résultats sous forme d'un tableau associatif.
+                        <?php foreach ($result as $row): ?>
+                            <tr class="text-[#EAD7D7]">
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['id_film'], 0, 20); ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['img_film'], 0, 20) . '...'; ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['nom_film'], 0, 20); ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['date_film'], 0, 20); ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['synopsis_film'], 0, 10) . '...'; ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['ba_film'], 0, 20) . '...'; ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['genres'], 0, 20) . '...'; ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['realisateurs'], 0, 20) . '...'; ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <?php echo substr($row['acteurs'], 0, 20) . '...'; ?>
+                                </td>
+
+                                <td class="px-2 py-2 border-2">
+                                    <a class="px-2 py-2 border-2 bg-green-400 text-[#6D466B]"
+                                        href="content/admin/films-crud/admin-update.php?id=<?php echo $row['id_film']; ?>">Edit</a>&nbsp;<a
+                                        class="px-2 py-2 border-2 bg-red-400 text-[#6D466B]"
+                                        href="content/admin/films-crud/traitement/delete-film.php?id=<?php echo $row['id_film']; ?>">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+
+                        <?php
+                        //  }
+                    
+                    }
+
                     ?>
 
-                    <?php foreach ($result as $row): ?>
-                        <tr class="text-[#EAD7D7]">
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['id_film']; ?>
-                            </td>
+                </tbody>
+            </table>
+            <a class="underline text-[#EAD7D7]" href="content/admin/films-crud/admin-create.php">Ajouter un film</a>
+            <br>
+            <a class="underline text-[#EAD7D7]" href="content/admin/panel.php">Retour au panneau d'administration</a>
+        </div>
 
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['img_film']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['nom_film']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['date_film']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['synopsis_film']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['ba_film']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['genres']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['realisateurs']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['acteurs']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <a class="px-2 py-2 border-2 bg-green-400 text-[#6D466B]"
-                                    href="content/admin/films-crud/admin-update.php?id=<?php echo $row['id_film']; ?>">Edit</a>&nbsp;<a
-                                    class="px-2 py-2 border-2 bg-red-400 text-[#6D466B]"
-                                    href="content/admin/films-crud/traitement/delete-film.php?id=<?php echo $row['id_film']; ?>">Delete</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-
-                    <?php
-                    //  }
-                
-                }
-
-                ?>
-
-            </tbody>
-        </table>
-        <a class="underline text-[#EAD7D7]" href="content/admin/films-crud/admin-create.php">Ajouter un film</a>
-        <br>
-        <a class="underline text-[#EAD7D7]" href="content/admin/panel.php">Retour au panneau d'administration</a>
-    </div>
-
+    </section>
 
     <?php include('../../includes/footer.php'); ?>
 
