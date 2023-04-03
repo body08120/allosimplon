@@ -1,4 +1,4 @@
-<nav class="text-[18px] text-[#EAD7D7] bg-[#6D466B] border-gray-200 px-2 sm:px-4 py-1 rounded dark:bg-gray-900">
+<nav class="text-[18px] text-[#EAD7D7] bg-[#6D466B] border-gray-200 px-2 py-1 rounded text-[24px] sm:px-4 dark:bg-gray-900">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
   <a href="#" class="flex items-center">
       <img src="http://localhost/allosimplon/assets/img/allosimplon.png" class="h-16 mr-3 lg:h-20" alt="AlloSimplon Logo" />
@@ -47,20 +47,20 @@
   <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:text-[18px]" id="mobile-menu-2">
     <ul class="flex flex-col p-4 mt-4 border border-gray-900 rounded-lg bg-[#B49FCC] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#B49FCC]">
       <li>
-        <a href="index.php" class="block py-2 pl-3 pr-4 text-white bg-[#6D466B] rounded md:bg-transparent md:text-[#6D466B] md:p-0 dark:text-white" aria-current="page">Accueil</a>
+        <a href="index.php" class="block py-2 pl-3 pr-4 text-white bg-[#6D466B] rounded md:bg-transparent md:text-[#6D466B] md:p-0 dark:text-white lg:text-[18px]" aria-current="page">Accueil</a>
       </li>
       <li>
-        <a href="content/pages/catalogue.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Catalogue</a>
+        <a href="content/pages/catalogue.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0 lg:text-[18px]">Catalogue</a>
       </li>
       <li>
-        <a href="content/formulaires/contact.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Contact</a>
+        <a href="content/formulaires/contact.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0 lg:text-[18px]">Contact</a>
       </li>
       <li>
-        <a href="content/pages/informations.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Plus d'infos</a>
+        <a href="content/pages/informations.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0 lg:text-[18px]">Plus d'infos</a>
       </li>
       <?php if (!empty($_SESSION['role_user']) && $_SESSION['role_user'] == $admin) {?>
       <li>
-        <a href="content/admin/panel.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0">Admin</a>
+        <a href="content/admin/panel.php" class="block py-2 pl-3 pr-4 text-gray-200 rounded hover:bg-[#6D466B] md:hover:bg-transparent md:hover:text-[#6D466B] md:p-0 lg:text-[18px]">Admin</a>
       </li>
       <?php } else{ } ?>
     </ul>

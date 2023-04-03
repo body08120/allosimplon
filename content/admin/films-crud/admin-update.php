@@ -138,10 +138,12 @@ if (isset($_GET['id'])) {
                                     echo "$genre <br>";
                                 endforeach; ?>
                             </span>
+                            <br>
 
                             <a class="underline text-[#EAD7D7]"
                                 href="content/admin/films-crud/film_genre_update.php?id=<?php echo $film_id; ?>">Modifiez les
                                 genres</a>
+                            <br>
                             <br>
 
                             <span>Réalisateurs:</span><br>
@@ -152,10 +154,12 @@ if (isset($_GET['id'])) {
                                     echo "$realisateur <br>";
                                 endforeach; ?>
                             </span>
+                            <br>
 
                             <a class="underline text-[#EAD7D7]"
                                 href="content/admin/films-crud/film_realisateur_update.php?id=<?php echo $film_id; ?>">Modifiez les
                                 réalisateurs</a>
+                            <br>
                             <br>
 
                             <span>Acteurs:</span><br>
@@ -165,6 +169,7 @@ if (isset($_GET['id'])) {
                                     echo "$acteur <br>";
                                 endforeach; ?>
                             </span>
+                            <br>
 
                             <a class="underline text-[#EAD7D7]"
                                 href="content/admin/films-crud/film_acteur_update.php?id=<?php echo $film_id; ?>">Modifiez les
