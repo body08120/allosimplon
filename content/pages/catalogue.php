@@ -154,40 +154,11 @@ session_start();
 
     <!--catalogue-->
     <section>
-        <div class="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/11/2500/1667" alt="Affiche" />
+        <div class="text-[#EAD7D7] uppercase grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div class="w-4/5 h-96 mx-auto my-6">
+                <img class="h-72" src="https://picsum.photos/id/11/2500/1667" alt="Affiche" />
+                <span>titre</span>
             </div>
-
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/12/2500/1667" alt="Affiche" />
-            </div>
-            
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/13/2500/1667" alt="Affiche" />
-            </div>
-            
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/14/2500/1667" alt="Affiche" />
-            </div>
-
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/15/2500/1667" alt="Affiche" />
-            </div>
-            
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/16/2500/1667" alt="Affiche" />
-            </div>
-
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/17/2500/1667" alt="Affiche" />
-            </div>
-
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/18/2500/1667" alt="Affiche" />
-            </div>
-
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/19/2500/1667" alt="Affiche" />
-            </div>
-
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/20/2500/1667" alt="Affiche" />
-            </div>
-
-            <div class="w-4/5 mx-auto my-6"><img src="https://picsum.photos/id/21/2500/1667" alt="Affiche" />
-            </div>
-
         </div>
     </section>
     <!---->
