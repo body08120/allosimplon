@@ -1,5 +1,17 @@
 <?php
 session_start();
+
+require_once('../../assets/config/config.php');
+
+$sql = "SELECT id_film, img_film, nom_film
+        FROM films";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$films = $stmt->fetchAll();
+
+// var_dump($films);
+// die();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -154,11 +166,19 @@ session_start();
 
     <!--catalogue-->
     <section>
-        <div class="text-[#EAD7D7] uppercase grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <div class="w-4/5 h-96 mx-auto my-6">
-                <img class="h-72" src="https://picsum.photos/id/11/2500/1667" alt="Affiche" />
-                <span>titre</span>
-            </div>
+        <div class="text-[#EAD7D7] uppercase grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <?php foreach ($films as $film): ?>
+                <div class="w-4/5 h-96 mx-auto my-9">
+                    <div class="mx-auto my-2 text-center h-96 w-3/5">
+                        <a href="">
+                            <img class="h-96 mx-auto" src="<?php echo $film['img_film'] ?>" alt="Affiche" />
+                            <span>
+                                <?php echo $film['nom_film'] ?>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </section>
     <!---->
