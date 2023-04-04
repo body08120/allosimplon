@@ -2,7 +2,7 @@
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        // Jeton CSRF invalide, traiter l'erreur
+        // echo "toz";
     } else {
         // Jeton CSRF valide, traiter le formulaire
     }
@@ -21,21 +21,38 @@ if (empty($nom) || empty($prenom) || empty($email) || empty($pseudo) || empty($p
     die();
 }
 
+// Vérification de l'email avec une expression régulière
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "L'email n'est pas valide.";
+    $_SESSION['error_message_email1'] = "Cet email est déjà utilisé.";
+    header('Location: ../formulaires/inscription.php');
+    exit();
+}
+
 // Vérification si l'email est déjà utilisé
 $stmt = $pdo->prepare("SELECT * FROM users WHERE mail_user = ?");
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 if ($user) {
-    echo "Cet email est déjà utilisé.";
-    die();
+    $_SESSION['error_message_email'] = "Cet email est déjà utilisé.";
+    header('Location: ../formulaires/inscription.php');
+    exit();
+}
+
+// Vérification longueur mot de passe
+if (strlen($password) < 8) {
+    $_SESSION['error_message_mdp'] = "Le mot de passe doit contenir au moins 8 caractères.";
+    header('Location: ../formulaires/inscription.php');
+    exit();
 }
 
 // Vérification du mot de passe
-if($password !== $repassword) {
-    echo 'les mot de passe ne correspondent pas';
-    die();
+if ($password !== $repassword) {
+    $_SESSION['error_message_mdp1'] = "les mot de passe ne correspondent pas.";
+    header('Location: ../formulaires/inscription.php');
+    exit();
 } else {
-    
+
 }
 // Hashage du mot de passe avant enregistrement dans la base de données
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -52,13 +69,6 @@ $stmt->bindParam(6, $role);
 $stmt->execute();
 
 
-// On stock les données user dans une session
-// $_SESSION['nom-user'] = $nom;
-// $_SESSION['prenom-user'] = $prenom;
-// $_SESSION['pseudo-user'] = $pseudo;
-
-
 
 header('location: ../formulaires/connexion.php');
 ?>
-
