@@ -22,13 +22,18 @@ if ($_SESSION['role_user'] != $admin) {
 
     <?php include('../includes/navbar.php'); ?>
 
-    <section class="flex flex-col items-center">
+    <section class="flex flex-col items-center my-9">
         <h1 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Administration</h1>
         <div class="flex flex-col justify-around">
-            <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a href="content/admin/users-crud/admin-view.php">Gestion des
-                    utilisateurs</a></div>
-            <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a href="content/admin/films-crud/admin-view.php">Gestion des
-                    films</a></div>
+            <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a
+                    href="content/admin/users-crud/admin-view.php">Gestion des
+                    utilisateurs</a>
+            </div>
+            <br>
+            <div class="py-1 px-8 my-6 mx-6 bg-[#B49FCC] rounded-full"><a
+                    href="content/admin/films-crud/admin-view.php">Gestion des
+                    films</a>
+            </div>
         </div>
     </section>
 

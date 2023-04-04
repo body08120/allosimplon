@@ -36,14 +36,14 @@
           </li>
         </ul>
       </div><?php } else { ?>
-      <div><a href="http://localhost/allosimplon/content/formulaires/connexion.php">Connectez-vous</a></div>
+      <div><a class="text-[18px] lg:text-[24px]" href="http://localhost/allosimplon/content/formulaires/connexion.php">Connectez-vous</a></div>
   <?php  }  
     ?>
-      </div>
     <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-900 rounded-lg md:hidden focus:bg-[#B49FCC] focus:outline-none" aria-controls="mobile-menu-2" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
     </button>
+  </div>
   <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 md:text-[18px]" id="mobile-menu-2">
     <ul class="flex flex-col p-4 mt-4 border border-gray-900 rounded-lg bg-[#B49FCC] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#B49FCC]">
       <li>
