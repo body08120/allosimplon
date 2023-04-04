@@ -1,14 +1,50 @@
 <?php
 session_start();
 
+// On vérifie on est sur quel page
+if (isset($_GET['page']) && !empty($_GET['page'])) {
+    $currentPage = (int) strip_tags($_GET['page']);
+} else {
+    $currentPage = 1;
+}
+
+// On se connecte à la db
 require_once('../../assets/config/config.php');
 
-$sql = "SELECT id_film, img_film, nom_film
-        FROM films";
 
+// On détermine le nombre de film
+$sql = "SELECT COUNT(*) AS nb_films 
+        FROM films";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
+
+//On récupère le nombre de film
+$result = $stmt->fetch();
+
+$nbFilms = (int) $result['nb_films'];
+
+
+// On détermine le nombre de film par page
+$parPage = 10;
+
+$pages = ceil($nbFilms / $parPage);
+
+// Calcul du premier film de la page
+$premier = ($currentPage * $parPage) - $parPage;
+
+// On récupère les id, img et nom des films
+$sql = "SELECT id_film, img_film, nom_film
+        FROM films
+        LIMIT :premier, :parpage";
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':premier', $premier, PDO::PARAM_INT);
+$stmt->bindValue(':parpage', $parPage, PDO::PARAM_INT);
+$stmt->execute();
+
+// On stock les films dans un tableau associatif
 $films = $stmt->fetchAll();
+
+
 
 // var_dump($films);
 // die();
@@ -180,6 +216,38 @@ $films = $stmt->fetchAll();
                 </div>
             <?php endforeach; ?>
         </div>
+
+                <br><br>
+        <!-- navigation pagination -->
+        <nav class="my-9 flex justify-center" aria-label="Page navigation example">
+            <ul class="inline-flex -space-x-px">
+
+                <!-- précedent -->
+                <li>
+                    <?php if ($currentPage > 1): ?>
+                        <a href="content/pages/catalogue.php?page=<?php echo $currentPage - 1; ?>"
+                            class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                    <?php endif; ?>
+                </li>
+
+                <!-- on boucle les pages -->
+                <?php for ($page = 1; $page <= $pages; $page++): ?>
+                    <li>
+                        <a href="content/pages/catalogue.php?page=<?php echo $page; ?>" aria-current="page"
+                            class="px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"><?php echo $page; ?></a>
+                    </li>
+                <?php endfor; ?>
+
+                <!-- suivant -->
+                <?php if ($currentPage < $pages): ?>
+                    <li>
+                        <a href="content/pages/catalogue.php?page=<?php echo $currentPage + 1; ?>"
+                            class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+
     </section>
     <!---->
 
