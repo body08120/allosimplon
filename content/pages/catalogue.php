@@ -205,9 +205,9 @@ $films = $stmt->fetchAll();
         <div class="text-[#EAD7D7] uppercase grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <?php foreach ($films as $film): ?>
                 <div class="w-4/5 h-96 mx-auto my-9">
-                    <div class="mx-auto my-2 text-center h-96 w-3/5">
+                    <div class="mx-auto my-2 text-center h-96">
                         <a href="content/pages/film.php?id=<?php echo $film['id_film']; ?>">
-                            <img class="h-96 mx-auto min-w-full" src="<?php echo $film['img_film'] ?>" alt="Affiche" />
+                            <img class="h-96 mx-auto" src="<?php echo $film['img_film'] ?>" alt="Affiche" />
                             <span>
                                 <?php echo $film['nom_film'] ?>
                             </span>

@@ -18,7 +18,7 @@ session_start();
 <!--navbar-->
 <?php include('../includes/navbar.php') ?>
 
-<div class="mb-32 xl:mb-44 xl:px-56 xl:mb-32 2xl:mx-52 ">
+<div class="xl:mb-44 xl:px-56 xl:mb-32 2xl:mx-52 ">
 
 <!-- text contact-->
 <div class="py-5 px-10">
