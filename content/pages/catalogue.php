@@ -11,7 +11,6 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 // On se connecte à la db
 require_once('../../assets/config/config.php');
 
-
 // On détermine le nombre de film
 $sql = "SELECT COUNT(*) AS nb_films 
         FROM films";
@@ -20,13 +19,11 @@ $stmt->execute();
 
 //On récupère le nombre de film
 $result = $stmt->fetch();
-
+// on force en nombre entier, autre sécu si on veut
 $nbFilms = (int) $result['nb_films'];
-
 
 // On détermine le nombre de film par page
 $parPage = 10;
-
 $pages = ceil($nbFilms / $parPage);
 
 // Calcul du premier film de la page
@@ -44,10 +41,10 @@ $stmt->execute();
 // On stock les films dans un tableau associatif
 $films = $stmt->fetchAll();
 
-
-
 // var_dump($films);
 // die();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +68,7 @@ $films = $stmt->fetchAll();
 
     <!--section tri-->
     <div class="px-10 mb-6 bg-[#6D466B] border-t-2 border-[#412234] lg:px-20 lg:mx-64 2xl:px-40 2xl:mx-96">
+
         <form class="flex flex-col text-[18px] font-thin" action="" method="GET">
             <select
                 class="uppercase text-[#B49FCC] tracking-[.10em] py-1 px-8 rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5"
@@ -186,15 +184,20 @@ $films = $stmt->fetchAll();
                 md:px-16 md:py-2 
                 lg:my-10" />
         </form>
+
         <!--____________________-->
-        <form class="flex flex-col" action="" method="GET">
-            <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5 text-[#B49FCC]" type="search"
-                placeholder="Ou tapez votre recherche..." name="search-input-catalogue" />
-            <input type="submit" value="VALIDER" name="" class="py-1 px-8 my-6 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
+        <div id="form-search">
+            <form class="flex flex-col" action="content/formulaires-traitement/search.php" method="GET">
+                <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5 text-[#B49FCC]"
+                    type="search" placeholder="Ou tapez votre recherche..." name="search-input-catalogue" />
+
+
+                <input type="submit" value="VALIDER" name="" class="py-1 px-8 my-6 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
                 focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0
                 md:px-16 md:py-2 
                 lg:my-10" />
-        </form>
+            </form>
+        </div>
     </div>
     <!---->
 
@@ -202,22 +205,24 @@ $films = $stmt->fetchAll();
 
     <!--catalogue-->
     <section class="my-9">
-        <div class="text-[#EAD7D7] uppercase grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <?php foreach ($films as $film): ?>
-                <div class="w-4/5 h-96 mx-auto my-9">
-                    <div class="mx-auto my-2 text-center h-96">
-                        <a href="content/pages/film.php?id=<?php echo $film['id_film']; ?>">
-                            <img class="h-96 mx-auto" src="<?php echo $film['img_film'] ?>" alt="Affiche" />
-                            <span>
-                                <?php echo $film['nom_film'] ?>
-                            </span>
-                        </a>
+        <div id="result-zone">
+            <div class="text-[#EAD7D7] uppercase grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <?php foreach ($films as $film): ?>
+                    <div class="w-4/5 h-96 mx-auto my-9">
+                        <div class="mx-auto my-2 text-center h-96">
+                            <a href="content/pages/film.php?id=<?php echo $film['id_film']; ?>">
+                                <img class="h-96 mx-auto" src="<?php echo $film['img_film'] ?>" alt="Affiche" />
+                                <span>
+                                    <?php echo $film['nom_film'] ?>
+                                </span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
         </div>
 
-                <br><br>
+        <br><br>
         <!-- navigation pagination -->
         <nav class="my-9 flex justify-center" aria-label="Page navigation example">
             <ul class="inline-flex -space-x-px">
@@ -257,6 +262,7 @@ $films = $stmt->fetchAll();
     <!--footer-->
     <?php include('../includes/footer.php') ?>
 
+    <script src="http://localhost/allosimplon/assets/js/cata-search.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 
