@@ -1,10 +1,12 @@
 <?php
 session_start();
 
+// Si l'user est connecter on le renvoie
 if (!empty($_SESSION['logged_in'])) {
     header('Location: http://localhost/allosimplon/index.php');
 }
 
+// On vérifie si un jeton un générer, si non on le génère
 if (!isset($_SESSION['csrf_token'])) {
     $csrf_token = bin2hex(random_bytes(32));
     $_SESSION['csrf_token'] = $csrf_token;
@@ -50,6 +52,22 @@ if (!isset($_SESSION['csrf_token'])) {
 
                 <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email"
                     placeholder="Adresse email" name="mail-user" />
+
+                <!-- gestion erreur champs vide -->
+                <?php if (isset($_SESSION['error_co_vide'])): ?>
+                    <p class="text-red-500 text-xs italic bg-red-100 p-1">
+                        <?php echo $_SESSION['error_co_vide']; ?>
+                    </p>
+                <?php endif; ?>
+
+                <!-- gestion erreur champs incorrect -->
+                <?php if (isset($_SESSION['error_co_incor'])): ?>
+                    <p class="text-red-500 text-xs italic bg-red-100 p-1">
+                        <?php echo $_SESSION['error_co_incor']; ?>
+                    </p>
+                    <?php unset($_SESSION['error_co_incor']); ?>
+                <?php endif; ?>
+
                 <!-- password -->
                 <div class="relative w-full my-3 focus:border-transparent focus:ring-0 md:my-5">
                     <div class="absolute inset-y-0 right-0 flex items-center px-2">
@@ -62,6 +80,16 @@ if (!isset($_SESSION['csrf_token'])) {
                     <input class="w-full js-password rounded-full focus:border-transparent focus:ring-0" id="password"
                         type="password" placeholder="Mot de passe" name="mdp-user" autocomplete="off" />
                 </div>
+
+                <!-- gestion erreur champs vide -->
+                <?php if (isset($_SESSION['error_co_vide'])): ?>
+                    <p class="text-red-500 text-xs italic bg-red-100 p-1">
+                        <?php echo $_SESSION['error_co_vide']; ?>
+                    </p>
+                    <?php unset($_SESSION['error_co_vide']); ?>
+                <?php endif; ?>
+
+
                 <!---->
                 <input type="submit" value="VALIDER" name="" class="py-1 px-8 my-6 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
                 focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0

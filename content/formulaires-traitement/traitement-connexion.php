@@ -1,9 +1,16 @@
 <?php
 session_start();
 
-// if ($_SESSION['logged_in'] === true){
-//     header('Location: http://localhost/allosimplon/index.php');
-// }
+//On vérifie qu'on est bien en post
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // On vérifie si le jeton est vide ou ne correspond pas au jeton stocké dans la session
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        echo "toz";
+        die();
+    } else {
+        // Jeton CSRF valide, on traite le formulaire
+    }
+}
 
 require_once('../../assets/config/config.php');
 
@@ -14,8 +21,9 @@ $password = htmlspecialchars($_POST['mdp-user']);
 
 // Vérification si les champs email et mot de passe sont bien remplis
 if (empty($email) || empty($password)) {
-    echo "Veuillez remplir tous les champs.";
-    die();
+    $_SESSION['error_co_vide'] = "Veuillez remplir tous les champs.";
+    header('Location: ../formulaires/connexion.php');
+    exit();
 }
 
 
@@ -37,7 +45,8 @@ if ($user && password_verify($password, $user["mdp_user"])) {
     header('location: /allosimplon/index.php');
 
 } else {
-    echo "Identifiants incorrects.";
-    // header('location: error.php');
+    $_SESSION['error_co_incor'] = "Adresse email ou mot de passe incorrect.";
+    header('Location: ../formulaires/connexion.php');
+    exit();
 }
 ?>

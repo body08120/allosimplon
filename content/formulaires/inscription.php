@@ -1,9 +1,11 @@
 <?php
 session_start();
 
+// Si l'user est connecter on le renvoie
 if (!empty($_SESSION['logged_in'])) {
     header('Location: http://localhost/allosimplon/index.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +56,7 @@ if (!empty($_SESSION['logged_in'])) {
                     </p>
                 <?php endif; ?>
 
-                <!-- gestion erreur email invalid -->
+                <!-- gestion erreur email -->
                 <?php if (isset($_SESSION['error_message_email1'])): ?>
                     <p class="text-red-500 text-xs italic bg-red-100 p-1">
                         <?php echo $_SESSION['error_message_email1']; ?>
