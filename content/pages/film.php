@@ -36,8 +36,8 @@ if (isset($_GET['id'])) {
     $row_count = $stmt->rowCount();
     $result = $stmt->fetchAll();
 
-    var_dump($result);
-    die();
+    // var_dump($result);
+    // die();
 
 
     if (is_array($result)) {
