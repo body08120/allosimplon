@@ -54,7 +54,7 @@ $films = $stmt->fetchAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlloSimplon - Trouvez ce que vous aimez</title>
-    <base href="/allosimplon/">
+    <base href="/projets/allosimplon/">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -68,8 +68,8 @@ $films = $stmt->fetchAll();
 
     <!--section tri-->
     <div class="px-10 mb-6 bg-[#6D466B] border-t-2 border-[#412234] lg:px-20 lg:mx-64 2xl:px-40 2xl:mx-96">
-
-        <div class="">
+        
+        <div class="hidden">
             <form class="flex flex-col text-[18px] font-thin" action="" method="GET">
                 <select
                     class="uppercase text-[#B49FCC] tracking-[.10em] py-1 px-8 rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5"

@@ -42,8 +42,7 @@ if ($user && password_verify($password, $user["mdp_user"])) {
     $_SESSION['pseudo_user'] = $user['pseudo_user'];
     $_SESSION['role_user'] = $user['id_role'];
 
-    header('location: /allosimplon/index.php');
-
+    header('location: /projets/allosimplon/index.php');
 } else {
     $_SESSION['error_co_incor'] = "Adresse email ou mot de passe incorrect.";
     header('Location: ../formulaires/connexion.php');

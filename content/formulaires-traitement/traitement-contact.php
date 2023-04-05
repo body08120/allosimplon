@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         // Jeton CSRF invalide, traiter l'erreur
@@ -91,7 +92,7 @@ $headers = sprintf('From: MESSAGE DU SITE Allosimplon <nataeel08120@gmail.com>%s
 /*L'envoi du mail - Et page de redirection*/
 mail($to, $sujet, $msg, $headers);
 // echo "succes";
-header('Location:http://www.localhost/allosimplon/index.php');
+header('Location:/projets/allosimplon/index.php');
 }
 else
 {

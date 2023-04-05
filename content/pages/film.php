@@ -73,7 +73,7 @@ if (isset($_GET['id'])) {
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <base href="/allosimplon/">
+                <base href="/projets/allosimplon/">
                 <title>AlloSimplon - <?php echo $titre; ?></title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -145,5 +145,4 @@ if (isset($_GET['id'])) {
     }
 
 }
-
 ?>
