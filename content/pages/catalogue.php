@@ -207,8 +207,8 @@ $films = $stmt->fetchAll();
 
     <!--catalogue-->
     <section class="my-9">
-        <div id="result-zone">
-            <div class="text-[#EAD7D7] uppercase grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div class="text-[#EAD7D7] uppercase">
+        <div id="result-zone" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
                 <!-- On boucle sur les films -->
                 <?php foreach ($films as $film): ?>
