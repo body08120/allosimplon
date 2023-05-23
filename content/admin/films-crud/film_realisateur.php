@@ -4,7 +4,7 @@ $id_film = $_SESSION['id_film'];
 
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: http://localhost/allosimplon/index.php');
+    header('Location: /projets/allosimplon/index.php');
 }
 include_once("../../../assets/config/config.php");
 
@@ -26,7 +26,7 @@ $realisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajoutez des réalisateur à votre film !</title>
-    <base href="/allosimplon/">
+    <base href="/projets/allosimplon/">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>

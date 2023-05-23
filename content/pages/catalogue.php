@@ -11,7 +11,7 @@ if (isset($_GET['page']) && !empty($_GET['page'])) {
 // On se connecte à la db
 require_once('../../assets/config/config.php');
 
-// On détermine le nombre de film
+// On détermine le nombre de film et on renomme
 $sql = "SELECT COUNT(*) AS nb_films 
         FROM films";
 $stmt = $pdo->prepare($sql);
@@ -54,7 +54,7 @@ $films = $stmt->fetchAll();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AlloSimplon - Trouvez ce que vous aimez</title>
-    <base href="/allosimplon/">
+    <base href="/projets/allosimplon/">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -69,7 +69,7 @@ $films = $stmt->fetchAll();
     <!--section tri-->
     <div class="px-10 mb-6 bg-[#6D466B] border-t-2 border-[#412234] lg:px-20 lg:mx-64 2xl:px-40 2xl:mx-96">
 
-        <div class="">
+        <div class="hidden">
             <form class="flex flex-col text-[18px] font-thin" action="" method="GET">
                 <select
                     class="uppercase text-[#B49FCC] tracking-[.10em] py-1 px-8 rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5"
@@ -207,12 +207,17 @@ $films = $stmt->fetchAll();
 
     <!--catalogue-->
     <section class="my-9">
-        <div id="result-zone">
-            <div class="text-[#EAD7D7] uppercase grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div class="text-[#EAD7D7] uppercase">
+        <div id="result-zone" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+                <!-- On boucle sur les films -->
                 <?php foreach ($films as $film): ?>
                     <div class="w-4/5 h-96 mx-auto my-9">
                         <div class="mx-auto my-2 text-center h-96">
+
+                            <!-- On envoie vers le film avec l'id en paramètres GET -->
                             <a href="content/pages/film.php?id=<?php echo $film['id_film']; ?>">
+                                <!-- On affiche ce qu'on veut afficher du film, et qu'on récupère de la db -->
                                 <img class="h-96 mx-auto" src="<?php echo $film['img_film'] ?>" alt="Affiche" />
                                 <span>
                                     <?php echo $film['nom_film'] ?>
@@ -220,6 +225,8 @@ $films = $stmt->fetchAll();
                             </a>
                         </div>
                     </div>
+
+                    <!-- fin de la boucle -->
                 <?php endforeach; ?>
             </div>
         </div>
@@ -231,7 +238,9 @@ $films = $stmt->fetchAll();
 
                 <!-- précedent -->
                 <li>
+                    <!-- Si la page courante + grand que 1: -->
                     <?php if ($currentPage > 1): ?>
+                        <!-- Le lien soustrait 1 de la page courante -->
                         <a href="content/pages/catalogue.php?page=<?php echo $currentPage - 1; ?>"
                             class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
                     <?php endif; ?>
@@ -246,12 +255,15 @@ $films = $stmt->fetchAll();
                 <?php endfor; ?>
 
                 <!-- suivant -->
-                <?php if ($currentPage < $pages): ?>
-                    <li>
+                <li>
+                    <!-- si la page courante est + petite que le nombre de pages -->
+                    <?php if ($currentPage < $pages): ?>
+                        <!-- Le lien additionne 1 à la page courante -->
                         <a href="content/pages/catalogue.php?page=<?php echo $currentPage + 1; ?>"
                             class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                    </li>
-                <?php endif; ?>
+                    <?php endif; ?>
+                </li>
+
             </ul>
         </nav>
 
@@ -261,10 +273,11 @@ $films = $stmt->fetchAll();
 
     <!-------------------------------------->
     <div class="h-1 divide-[#412234]"></div>
+
     <!--footer-->
     <?php include('../includes/footer.php') ?>
 
-    <script src="http://localhost/allosimplon/assets/js/cata-search.js"></script>
+    <script src="/projets/allosimplon/assets/js/cata-search.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 

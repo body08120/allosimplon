@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Jeton CSRF valide, traiter le formulaire
     }
 }
-
 session_destroy();
-header('Location: http://localhost/allosimplon/index.php');
+header('Location: /projets/allosimplon/index.php');
 ?>

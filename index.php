@@ -24,7 +24,7 @@ $films = $stmt->fetchAll();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base href="/allosimplon/">
+  <base href="/projets/allosimplon/">
   <title>AlloSimplon - Accueil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -52,27 +52,27 @@ $films = $stmt->fetchAll();
     <div class="relative h-56 overflow-hidden md:h-96 lg:h-[38rem] xl:h-[48rem]">
       <!-- Item 1 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="http://localhost/allosimplon/assets/img/carousel/carousel-1.png"
+        <img src="/projets/allosimplon/assets/img/carousel/carousel-1.png"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
       <!-- Item 2 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-        <img src="http://localhost/allosimplon/assets/img/carousel/carousel-2.png"
+        <img src="/projets/allosimplon/assets/img/carousel/carousel-2.png"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
       <!-- Item 3 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="http://localhost/allosimplon/assets/img/carousel/carousel-3.png"
+        <img src="/projets/allosimplon/assets/img/carousel/carousel-3.png"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
       <!-- Item 4 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="http://localhost/allosimplon/assets/img/carousel/carousel-4.png"
+        <img src="/projets/allosimplon/assets/img/carousel/carousel-4.png"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
       <!-- Item 5 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="http://localhost/allosimplon/assets/img/carousel/carousel-5.png"
+        <img src="/projets/allosimplon/assets/img/carousel/carousel-5.png"
           class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
       </div>
     </div>
@@ -121,22 +121,22 @@ $films = $stmt->fetchAll();
       <!-- owl.carousel -->
       <div class="owl-carousel owl-theme">
         <div class="h-72 item">
-          <a href="content/pages/film.php?id=<?php echo $films[0][0]; ?>"><img class="h-full" src="<?php echo $films[0][1]; ?>" alt="<?php echo $films[0][2]; ?>"> </a>
+          <a href="/projets/allosimplon/content/pages/film.php?id=<?php echo $films[0][0]; ?>"><img class="h-full" src="<?php echo $films[0][1]; ?>" alt="<?php echo $films[0][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[1][0]; ?>"><img class="h-full" src="<?php echo $films[1][1]; ?>" alt="<?php echo $films[1][2]; ?>"> </a>
+          <a href="/projets/allosimplon/content/pages/film.php?id=<?php echo $films[1][0]; ?>"><img class="h-full" src="<?php echo $films[1][1]; ?>" alt="<?php echo $films[1][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[2][0]; ?>"><img class="h-full" src="<?php echo $films[2][1]; ?>" alt="<?php echo $films[2][2]; ?>"> </a>
+          <a href="/projets/allosimplon/content/pages/film.php?id=<?php echo $films[2][0]; ?>"><img class="h-full" src="<?php echo $films[2][1]; ?>" alt="<?php echo $films[2][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[3][0]; ?>"><img class="h-full" src="<?php echo $films[3][1]; ?>" alt="<?php echo $films[3][2]; ?>"> </a>
+          <a href="/projets/allosimplon/content/pages/film.php?id=<?php echo $films[3][0]; ?>"><img class="h-full" src="<?php echo $films[3][1]; ?>" alt="<?php echo $films[3][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[4][0]; ?>"><img class="h-full" src="<?php echo $films[4][1]; ?>" alt="<?php echo $films[4][2]; ?>"> </a>
+          <a href="/projets/allosimplon/content/pages/film.php?id=<?php echo $films[4][0]; ?>"><img class="h-full" src="<?php echo $films[4][1]; ?>" alt="<?php echo $films[4][2]; ?>"> </a>
         </div>
         <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[5][0]; ?>"><img class="h-full" src="<?php echo $films[5][1]; ?>" alt="<?php echo $films[5][2]; ?>"> </a>
+          <a href="/projets/allosimplon/content/pages/film.php?id=<?php echo $films[5][0]; ?>"><img class="h-full" src="<?php echo $films[5][1]; ?>" alt="<?php echo $films[5][2]; ?>"> </a>
         </div>
       </div>
     </section>
@@ -155,7 +155,7 @@ $films = $stmt->fetchAll();
           }
         }
       </style>
-      <img class="h-full thumbnail" src="http://localhost/allosimplon/assets/img/background/parallax-newsletters.png"
+      <img class="h-full thumbnail" src="/projects/allosimplon/assets/img/background/parallax-newsletters.png"
         alt="" />
     </div>
 
@@ -168,7 +168,7 @@ $films = $stmt->fetchAll();
         </p>
         <!---->
 
-        <form method="" action="" class="flex flex-col">
+        <form method="POST" action="" class="flex flex-col">
           <div class="flex justify-between items-center bg-white rounded-full lg:mx-20 xl:mx-64">
             <input type="email" placeholder="exemple.du08@gmail.fr" name="input-form-email-newsletters"
               class="border-none bg-transparent focus:border-transparent focus:ring-0" />
@@ -195,10 +195,10 @@ $films = $stmt->fetchAll();
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js"></script>
-  <script src="http://localhost/allosimplon/assets/js/parallax-newsletters.js"></script>
+  <script src="/projects/allosimplon/assets/js/parallax-newsletters.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="http://localhost/allosimplon/assets/js/slider-film.js"></script>
+  <script src="/projects/allosimplon/assets/js/slider-film.js"></script>
 </body>
 
 </html>

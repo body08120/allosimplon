@@ -16,11 +16,11 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Afficher les résultats de la recherche
 foreach ($results as $film) {
-    echo '<div class="w-4/5 h-96 mx-auto my-9">';
-    echo '<div class="mx-auto my-2 text-center h-96">';
-    echo '<a href="content/pages/film.php?id=' . $film['id_film'] . '">';
-    echo '<img class="h-96 mx-auto" src="' . $film['img_film'] . '" alt="Affiche" />';
-    echo '<span>' . $film['nom_film'] . '</span>';
-    echo '</a></div></div>';
+    echo '<div class="w-4/5 h-96 mx-auto my-9">
+     <div class="mx-auto my-2 text-center h-96">
+     <a href="content/pages/film.php?id=' . $film['id_film'] . '">
+     <img class="h-96 mx-auto" src="' . $film['img_film'] . '" alt="Affiche" />
+     <span>' . $film['nom_film'] . '</span>
+     </a></div></div>';
 }
 ?>

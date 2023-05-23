@@ -1,7 +1,7 @@
-<nav class="text-[18px] text-[#EAD7D7] bg-[#6D466B] border-gray-200 px-2 py-1 rounded text-[24px] sm:px-4 dark:bg-gray-900">
+<nav class="text-[18px] text-[#EAD7D7] bg-[#6D466B] border-gray-200 px-2 py-1 rounded text-[24px] sm:px-4">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
   <a href="#" class="flex items-center">
-      <img src="http://localhost/allosimplon/assets/img/allosimplon.png" class="h-16 mr-3 lg:h-20" alt="AlloSimplon Logo" />
+      <img src="/projets/allosimplon/assets/img/allosimplon.png" class="h-16 mr-3 lg:h-20" alt="AlloSimplon Logo" />
       <!-- <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> -->
   </a>
   <div class="flex items-center md:order-2">
@@ -9,10 +9,9 @@
   $admin = "2";
   if(isset($_SESSION['mail-user']) && $_SESSION['logged_in'] === true) {
     ?>
-
       <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-[#B49FCC]" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
-        <img class="w-10 h-10 rounded-full" src="http://localhost/allosimplon/assets/img/avatar.png" alt="user photo">
+        <img class="w-10 h-10 rounded-full" src="/projets/allosimplon/assets/img/avatar.png" alt="user photo">
       </button>
       
       <!-- Dropdown menu -->
@@ -32,11 +31,11 @@
             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Paramètres</a>
           </li>-->
           <li>
-            <a href="http://localhost/allosimplon/content/formulaires-traitement/traitement-deconnexion.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Déconnexion</a>
+            <a href="/projets/allosimplon/content/formulaires-traitement/traitement-deconnexion.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Déconnexion</a>
           </li>
         </ul>
       </div><?php } else { ?>
-      <div><a class="text-[18px] lg:text-[24px]" href="http://localhost/allosimplon/content/formulaires/connexion.php">Connectez-vous</a></div>
+      <div><a class="text-[18px] lg:text-[24px]" href="/projets/allosimplon/content/formulaires/connexion.php">Connectez-vous</a></div>
   <?php  }  
     ?>
     <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-900 rounded-lg md:hidden focus:bg-[#B49FCC] focus:outline-none" aria-controls="mobile-menu-2" aria-expanded="false">

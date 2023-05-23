@@ -4,7 +4,7 @@ $id_film = $_SESSION['id_film'];
 
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: http://localhost/allosimplon/index.php');
+    header('Location: /projets/allosimplon/index.php');
 }
 
 
