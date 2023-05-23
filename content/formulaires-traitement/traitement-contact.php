@@ -94,6 +94,7 @@ if ($renseigne == 1 and $courriel == 1) {
     // echo "succes";
     header('Location:/projets/allosimplon/index.php');
 } else {
+
     echo "error";
     // header('Location:http://www.localhost/allosimplon/index.php');
 }
