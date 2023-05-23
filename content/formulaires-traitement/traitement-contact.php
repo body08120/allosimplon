@@ -67,36 +67,35 @@ if (!empty($alert)) {
 }
 
 /* Si les variables sont bonne */
-if ($renseigne == 1 AND $courriel == 1)
-{
-/*Envoi du mail*/
+if ($renseigne == 1 and $courriel == 1) {
+    /*Envoi du mail*/
 
-/*Le destinataire*/
-$to="nataeel08120@gmail.com";
+    /*Le destinataire*/
+    $to = "nataeel08120@gmail.com";
 
-/*Le sujet du message qui apparaitra*/
-$sujet="Message depuis le site";
-$msg = '';
+    /*Le sujet du message qui apparaitra*/
+    $sujet = "Message depuis le site";
+    $msg = '';
 
-/*Le message en lui même*/
-/*$msg = 'Mail envoye depuis le site' "rnrn";*/
-$msg .= 'Nom : '.$nom."rnrn";
-$msg .= 'Mail : '.$mail."rnrn";
-$msg .= 'Motif : '.$motif."rnrn";
-$msg .= 'Message : '.$message."rnrn";
+    /*Le message en lui-même*/
+    /*$msg = 'Mail envoyé depuis le site'."\r\n\r\n";*/
+    $msg .= 'Nom : ' . $nom . "\r\n\r\n";
+    $msg .= 'Mail : ' . $mail . "\r\n\r\n";
+    $msg .= 'Motif : ' . $motif . "\r\n\r\n";
+    $msg .= 'Message : ' . $message . "\r\n\r\n";
 
-/*Les en-têtes du mail*/
-$headers = sprintf('From: MESSAGE DU SITE Allosimplon <nataeel08120@gmail.com>%s%s', "\r\n", "\r\n");
-// $headers .= "rn";
 
-/*L'envoi du mail - Et page de redirection*/
-mail($to, $sujet, $msg, $headers);
-// echo "succes";
-header('Location:/projets/allosimplon/index.php');
-}
-else
-{
+    /*Les en-têtes du mail*/
+    $headers = sprintf('From: MESSAGE DU SITE Allosimplon <nataeel08120@gmail.com>%s%s', "\r\n", "\r\n");
+    // $headers .= "rn";
+
+    /*L'envoi du mail - Et page de redirection*/
+    mail($to, $sujet, $msg, $headers);
+    // echo "succes";
+    header('Location:/projets/allosimplon/index.php');
+} else {
+
     echo "error";
-// header('Location:http://www.localhost/allosimplon/index.php');
+    // header('Location:http://www.localhost/allosimplon/index.php');
 }
 ?>
