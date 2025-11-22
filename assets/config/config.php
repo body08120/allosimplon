@@ -1,15 +1,26 @@
 <?php
-// Paramètres de connexion à la base de données
-define('DB_HOST', 'localhost'); // nom de l'hôte
-define('DB_NAME', 'allosimplon'); // nom de la base de données
-define('DB_USER', 'root'); // nom d'utilisateur de la base de données
-define('DB_PASSWORD', ''); // mot de passe de l'utilisateur de la base de données
+// Détection automatique de l'environnement (Docker ou Local)
+$isDocker = @fsockopen('mysql', 3306, $errno, $errstr, 1) !== false;
 
-// define('DB_HOST', 'db5011787055.hosting-data.io'); // nom de l'hôte
-// define('DB_NAME', 'dbs9929005'); // nom de la base de données
-// define('DB_USER', 'dbu5557557'); // nom d'utilisateur de la base de données
-// define('DB_PASSWORD', '339ceFsJ'); // mot de passe de l'utilisateur de la base de données
+if ($isDocker) {
+    // Configuration Docker
+    define('DB_HOST', 'mysql');
+    define('DB_NAME', 'allosimplon');
+    define('DB_USER', 'allosimplon_user');
+    define('DB_PASSWORD', 'allosimplon_pass');
+} else {
+    // Configuration locale (WAMP/LAMP)
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'allosimplon');
+    define('DB_USER', 'root');
+    define('DB_PASSWORD', '');
+}
 
+// Configuration production (commentée)
+// define('DB_HOST', 'db5011787055.hosting-data.io');
+// define('DB_NAME', 'dbs9929005');
+// define('DB_USER', 'dbu5557557');
+// define('DB_PASSWORD', '339ceFsJ');
 
 // Connexion à la base de données avec PDO
 try {

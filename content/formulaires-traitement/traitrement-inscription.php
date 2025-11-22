@@ -53,16 +53,10 @@ if ($password !== $repassword) {
 // Hashage du mot de passe avant enregistrement dans la base de données
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-$role = '1';
+$role = 1;
 // Enregistrement de l'utilisateur dans la base de données
-$stmt = $pdo->prepare("INSERT INTO users (nom_user, prenom_user, mail_user, pseudo_user, mdp_user, id_role) VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bindParam(1, $nom);
-$stmt->bindParam(2, $prenom);
-$stmt->bindParam(3, $email);
-$stmt->bindParam(4, $pseudo);
-$stmt->bindParam(5, $hashed_password);
-$stmt->bindParam(6, $role);
-$stmt->execute();
+$stmt = $pdo->prepare("INSERT INTO users (nom_user, prenom_user, email_user, mdp_user, role_user) VALUES (?, ?, ?, ?, ?)");
+$stmt->execute([$nom, $prenom, $email, $hashed_password, $role]);
 
 
 

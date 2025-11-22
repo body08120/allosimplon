@@ -3,7 +3,7 @@ session_start();
 
 // Si l'user est connecter on le renvoie
 if (!empty($_SESSION['logged_in'])) {
-    header('Location: http://localhost/allosimplon/index.php');
+    header('Location: /index.php');
 }
 
 ?>
@@ -14,7 +14,7 @@ if (!empty($_SESSION['logged_in'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/projets/allosimplon/">
+    <!-- Base href removed for Docker compatibility -->
     <title>AlloSimplon - Inscription</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -38,7 +38,7 @@ if (!empty($_SESSION['logged_in'])) {
 
         <!--formulaire-->
         <div class="bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-32 xl:rounded-lg">
-            <form action="content/formulaires-traitement/traitrement-inscription.php" method="POST"
+            <form action="/content/formulaires-traitement/traitrement-inscription.php" method="POST"
                 class="flex flex-col">
                 <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text"
                     placeholder="Nom" name="nom-user" />
@@ -153,7 +153,7 @@ if (!empty($_SESSION['logged_in'])) {
                     md:px-16 md:py-2 
                     lg:py-4 lg:my-10" />
             </form>
-            <div class="text-[#EAD7D7] text-center hover:underline"><a href="content/formulaires/connexion.php">Cliquez
+            <div class="text-[#EAD7D7] text-center hover:underline"><a href="/content/formulaires/connexion.php">Cliquez
                     ici pour vous connectez !</a></div>
         </div>
     </div>
@@ -170,8 +170,8 @@ if (!empty($_SESSION['logged_in'])) {
 
 
 
-    <script src="http://localhost/allosimplon/assets/js/form-js-password.js"></script>
-    <script src="http://localhost/allosimplon/assets/js/form-js-repassword.js"></script>
+    <script src="/assets/js/form-js-password.js"></script>
+    <script src="/assets/js/form-js-repassword.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 

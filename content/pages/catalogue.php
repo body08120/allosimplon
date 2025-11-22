@@ -189,7 +189,7 @@ $films = $stmt->fetchAll();
 
         <!--____________________-->
         <div id="form-search">
-            <form class="flex flex-col" action="content/formulaires-traitement/search.php" method="GET">
+            <form class="flex flex-col" action="/content/formulaires-traitement/search.php" method="GET">
                 <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5 text-[#B49FCC]"
                     type="search" placeholder="Ou tapez votre recherche..." name="search-input-catalogue" />
 
@@ -216,7 +216,7 @@ $films = $stmt->fetchAll();
                         <div class="mx-auto my-2 text-center h-96">
 
                             <!-- On envoie vers le film avec l'id en paramètres GET -->
-                            <a href="content/pages/film.php?id=<?php echo $film['id_film']; ?>">
+                            <a href="/content/pages/film.php?id=<?php echo $film['id_film']; ?>">
                                 <!-- On affiche ce qu'on veut afficher du film, et qu'on récupère de la db -->
                                 <img class="h-96 mx-auto" src="<?php echo $film['img_film'] ?>" alt="Affiche" />
                                 <span>
@@ -241,7 +241,7 @@ $films = $stmt->fetchAll();
                     <!-- Si la page courante + grand que 1: -->
                     <?php if ($currentPage > 1): ?>
                         <!-- Le lien soustrait 1 de la page courante -->
-                        <a href="content/pages/catalogue.php?page=<?php echo $currentPage - 1; ?>"
+                        <a href="/content/pages/catalogue.php?page=<?php echo $currentPage - 1; ?>"
                             class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
                     <?php endif; ?>
                 </li>
@@ -249,7 +249,7 @@ $films = $stmt->fetchAll();
                 <!-- on boucle les pages -->
                 <?php for ($page = 1; $page <= $pages; $page++): ?>
                     <li>
-                        <a href="content/pages/catalogue.php?page=<?php echo $page; ?>" aria-current="page"
+                        <a href="/content/pages/catalogue.php?page=<?php echo $page; ?>" aria-current="page"
                             class="px-3 py-2 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"><?php echo $page; ?></a>
                     </li>
                 <?php endfor; ?>
@@ -259,7 +259,7 @@ $films = $stmt->fetchAll();
                     <!-- si la page courante est + petite que le nombre de pages -->
                     <?php if ($currentPage < $pages): ?>
                         <!-- Le lien additionne 1 à la page courante -->
-                        <a href="content/pages/catalogue.php?page=<?php echo $currentPage + 1; ?>"
+                        <a href="/content/pages/catalogue.php?page=<?php echo $currentPage + 1; ?>"
                             class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
                     <?php endif; ?>
                 </li>
@@ -277,7 +277,7 @@ $films = $stmt->fetchAll();
     <!--footer-->
     <?php include('../includes/footer.php') ?>
 
-    <script src="/projets/allosimplon/assets/js/cata-search.js"></script>
+    <script src="/assets/js/cata-search.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 

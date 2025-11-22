@@ -3,7 +3,7 @@ session_start();
 
 // Si l'user est connecter on le renvoie
 if (!empty($_SESSION['logged_in'])) {
-    header('Location: http://localhost/allosimplon/index.php');
+    header('Location: /index.php');
 }
 
 // On vérifie si un jeton un générer, si non on le génère
@@ -19,7 +19,7 @@ if (!isset($_SESSION['csrf_token'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/projets/allosimplon/">
+    <!-- Base href removed for Docker compatibility -->
     <title>AlloSimplon - Connexion</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -46,7 +46,7 @@ if (!isset($_SESSION['csrf_token'])) {
 
         <!--form connexion-->
         <div class=" bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-52 xl:rounded-lg">
-            <form action="content/formulaires-traitement/traitement-connexion.php" method="POST" class="flex flex-col">
+            <form action="/content/formulaires-traitement/traitement-connexion.php" method="POST" class="flex flex-col">
 
                 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
@@ -97,7 +97,7 @@ if (!isset($_SESSION['csrf_token'])) {
                 lg:py-4 lg:my-10" />
                 <form>
                     <div class="text-[#EAD7D7] text-center hover:underline"><a
-                            href="content/formulaires/inscription.php">Cliquez ici pour créez un compte !</a></div>
+                            href="/content/formulaires/inscription.php">Cliquez ici pour créez un compte !</a></div>
         </div>
     </div>
     <!-------------------------------------->
@@ -108,7 +108,7 @@ if (!isset($_SESSION['csrf_token'])) {
     <?php include('../includes/footer.php') ?>
 
 
-    <script src="/projets/allosimplon/assets/js/form-js-password.js"></script>
+    <script src="/assets/js/form-js-password.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 </body>
 

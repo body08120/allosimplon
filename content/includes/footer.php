@@ -5,15 +5,15 @@
       <div class="flex justify-evenly my-10">
         <!---->
         <a href="https://www.facebook.com/">
-          <img src="/projects/allosimplon/assets/img/social/facebook.png"  alt="facebook" class="h-[52px]" />
+          <img src="/assets/img/social/facebook.png"  alt="facebook" class="h-[52px]" />
         </a>
         <!---->
         <a href="https://www.instagram.com/">  
-          <img src="/projects/allosimplon/assets/img/social/instagram.png" alt="instagram" class="h-[52px]" />       
+          <img src="/assets/img/social/instagram.png" alt="instagram" class="h-[52px]" />       
         </a>
         <!---->
         <a href="https://www.twitter.com/">
-          <img src="/projects/allosimplon/assets/img/social/twitter.png" alt="twitter" class="h-[52px]" />
+          <img src="/assets/img/social/twitter.png" alt="twitter" class="h-[52px]" />
         </a>
       </div>
 

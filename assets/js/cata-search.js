@@ -10,7 +10,7 @@ searchForm.addEventListener('submit', function(event) {
     const searchValue = searchForm.elements['search-input-catalogue'].value;
     const xhr = new XMLHttpRequest();
     //On renvoie l'url en get
-    xhr.open('GET', `content/formulaires-traitement/search.php?search-input-catalogue=${searchValue}`);
+    xhr.open('GET', `/content/formulaires-traitement/search.php?search-input-catalogue=${searchValue}`);
     xhr.onload = function() {
         if (xhr.status === 200) {
             resultZone.innerHTML = xhr.responseText;

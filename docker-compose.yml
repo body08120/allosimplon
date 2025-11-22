@@ -1,0 +1,46 @@
+services:
+  php:
+    image: php:8.2-apache
+    container_name: allosimplon-php
+    ports:
+      - "8001:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - allosimplon-network
+    command: >
+      bash -c "docker-php-ext-install pdo pdo_mysql && 
+               a2enmod rewrite && 
+               apache2-foreground"
+
+  mysql:
+    image: mysql:8.0
+    container_name: allosimplon-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: allosimplon
+      MYSQL_USER: allosimplon_user
+      MYSQL_PASSWORD: allosimplon_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./allosimplon.sql:/docker-entrypoint-initdb.d/allosimplon.sql
+      - mysql_data:/var/lib/mysql
+    networks:
+      - allosimplon-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+volumes:
+  mysql_data:
+
+networks:
+  allosimplon-network:
+    driver: bridge
