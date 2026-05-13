@@ -19,7 +19,7 @@ if ($_SESSION['role_user'] != $admin) {
 </head>
 
 
-<body class="bg-[#412234] font-mono text-black">
+<body class="bg-[#412234] pt-20 font-mono text-black min-h-screen flex flex-col">
 
     <?php include('../includes/navbar.php'); ?>
 

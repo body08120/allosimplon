@@ -12,7 +12,7 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"  rel="stylesheet" />
 </head>
-<body class="bg-[#412234] font-mono">
+<body class="bg-[#412234] pt-20 font-mono min-h-screen flex flex-col">
 
 <!--navbar-->
 <?php include('../includes/navbar.php') ?>

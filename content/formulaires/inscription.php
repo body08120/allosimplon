@@ -20,7 +20,7 @@ if (!empty($_SESSION['logged_in'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-[#412234]">
+<body class="bg-[#412234] pt-20 min-h-screen flex flex-col">
     
     <!--navbar-->
     <?php include('../includes/navbar.php') ?>

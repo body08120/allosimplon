@@ -55,7 +55,7 @@ include_once("../../../assets/config/close.php");
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-[#412234] font-mono">
+<body class="bg-[#412234] pt-20 font-mono min-h-screen flex flex-col">
     <?php include('../../includes/navbar.php'); ?>
     <section>
         <div class="flex flex-col items-center">

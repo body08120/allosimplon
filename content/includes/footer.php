@@ -1,4 +1,4 @@
-<div class="bg-[#6D466B] px-10">
+<div class="bg-[#6D466B] px-10 mt-auto">
     <h3 class="text-[#EAD7D7] text-center uppercase font-semibold text-[24px] tracking-[.15em] py-4">Suivez-nous</h3>
 
       <!--icon-social-->

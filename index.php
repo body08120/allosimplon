@@ -2,23 +2,16 @@
 session_start();
 require_once('assets/config/config.php');
 
-$sql = "SELECT id_film, img_film, nom_film
-        FROM films
-        ORDER BY id_film
-        DESC
-        LIMIT 6";
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$films = $stmt->fetchAll();
+$derniersAjouts = $pdo->query("SELECT f.id_film, f.img_film, f.nom_film FROM films f ORDER BY f.id_film DESC LIMIT 6")->fetchAll();
 
-// var_dump($films[0][0], $films[0][1]);
-// var_dump($films);
-// die();
+$actionSF = $pdo->query("SELECT DISTINCT f.id_film, f.img_film, f.nom_film FROM films f JOIN possede p ON f.id_film=p.id_film JOIN genres g ON p.id_genre=g.id_genre WHERE g.nom_genre IN ('Action','Science-Fiction') LIMIT 6")->fetchAll();
 
+$drameThriller = $pdo->query("SELECT DISTINCT f.id_film, f.img_film, f.nom_film FROM films f JOIN possede p ON f.id_film=p.id_film JOIN genres g ON p.id_genre=g.id_genre WHERE g.nom_genre IN ('Drame','Thriller') LIMIT 6")->fetchAll();
 
+$aventure = $pdo->query("SELECT DISTINCT f.id_film, f.img_film, f.nom_film FROM films f JOIN possede p ON f.id_film=p.id_film JOIN genres g ON p.id_genre=g.id_genre WHERE g.nom_genre IN ('Aventure','Animation','Comédie') LIMIT 6")->fetchAll();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -27,145 +20,83 @@ $films = $stmt->fetchAll();
   <title>AlloSimplon - Accueil</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  </link>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  </link>
-  <link rel="stylesheet" href="assets/css/slider-film.css">
   <style>
-    .owl-theme .item {
-      height: auto;
-    }
+    .film-card:hover .film-overlay { opacity: 1; }
+    .film-card img { transition: transform 0.3s ease; }
+    .film-card:hover img { transform: scale(1.05); }
+    .film-overlay { transition: opacity 0.3s ease; }
+    .row-scroll { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; scroll-behavior: smooth; }
+    .row-scroll::-webkit-scrollbar { height: 4px; }
+    .row-scroll::-webkit-scrollbar-track { background: #412234; }
+    .row-scroll::-webkit-scrollbar-thumb { background: #6D466B; border-radius: 2px; }
   </style>
 </head>
 
-<body class="bg-[#412234] font-mono">
+<body class="bg-[#1a0d14] font-mono min-h-screen flex flex-col">
 
-  <!--navbar-->
   <?php include('content/includes/navbar.php') ?>
 
-  <!--carousel-->
-  <div id="controls-carousel" class="relative w-full" data-carousel="static">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden md:h-96 lg:h-[38rem] xl:h-[48rem]">
-      <!-- Item 1 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="assets/img/carousel/carousel-1.png"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+  <!-- HERO -->
+  <section class="relative w-full h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+    <!-- Image de fond -->
+    <img src="assets/img/carousel/carousel-2.png" alt="" class="absolute inset-0 w-full h-full object-cover object-center" />
+    <!-- Overlay noir global pour assombrir -->
+    <div class="absolute inset-0" style="background: rgba(0,0,0,0.55);"></div>
+    <!-- Fondu violet sur le centre/bas -->
+    <div class="absolute inset-0" style="background: linear-gradient(to top, #1a0d14 0%, rgba(65,34,52,0.7) 40%, transparent 100%);"></div>
+
+    <div class="relative z-10 px-6 max-w-4xl mx-auto">
+      <div class="mb-4 inline-flex items-center gap-2 bg-[#B49FCC]/20 border border-[#B49FCC]/40 rounded-full px-4 py-1 text-[#B49FCC] text-sm tracking-widest uppercase">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+        Votre cinéma en ligne
       </div>
-      <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-        <img src="assets/img/carousel/carousel-2.png"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-      </div>
-      <!-- Item 3 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="assets/img/carousel/carousel-3.png"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="assets/img/carousel/carousel-4.png"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-      </div>
-      <!-- Item 5 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="assets/img/carousel/carousel-5.png"
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-[#EAD7D7] tracking-tight mb-6" style="text-shadow: 0 0 60px rgba(180,159,204,0.4);">Allo<span class="text-[#B49FCC]">Simplon</span></h1>
+      <p class="text-lg md:text-xl text-[#EAD7D7]/70 max-w-2xl mx-auto mb-10 leading-relaxed">Découvrez des milliers de films, séries et documentaires. Explorez notre catalogue et trouvez votre prochain coup de cœur.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/content/pages/catalogue.php" class="px-8 py-3 bg-[#B49FCC] hover:bg-[#EAD7D7] text-[#412234] font-bold rounded-full text-lg tracking-wide transition-all duration-200 uppercase">Explorer le catalogue</a>
+        <a href="/content/formulaires/connexion.php" class="px-8 py-3 border-2 border-[#B49FCC]/60 hover:border-[#B49FCC] text-[#EAD7D7] font-bold rounded-full text-lg tracking-wide transition-all duration-200 uppercase">Se connecter</a>
       </div>
     </div>
-    <!-- Slider controls -->
-    <button type="button"
-      class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-prev>
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#B49FCC]/50 dark:bg-gray-800/30 group-hover:bg-[#B49FCC]/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-[#B49FCC] dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-        <svg aria-hidden="true" class="w-6 h-6 text-[#6D466B] dark:text-gray-800" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-        </svg>
-        <span class="sr-only">Précédent</span>
-      </span>
-    </button>
-    <button type="button"
-      class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-next>
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#B49FCC]/50 dark:bg-gray-800/30 group-hover:bg-[#B49FCC]/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-[#B49FCC] dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-        <svg aria-hidden="true" class="w-6 h-6 text-[#6D466B] dark:text-gray-800" fill="none" stroke="currentColor"
-          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-        </svg>
-        <span class="sr-only">Suivant</span>
-      </span>
-    </button>
-  </div>
 
-
-  <!--bg-top-carousel-->
-  <div class="bg-[#6D466B]">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#EAD7D7"
-      class="w-14 h-14 mx-auto">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
-    </svg>
-  </div>
-
-  <div class="relative overflow-hidden">
-
-    <!--slider top-10 -->
-    <section class="my-9">
-      <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em] my-6">Nos derniers ajouts
-      </h2>
-      <!-- owl.carousel -->
-      <div class="owl-carousel owl-theme">
-        <div class="h-72 item">
-          <a href="content/pages/film.php?id=<?php echo $films[0][0]; ?>"><img class="h-full" src="<?php echo $films[0][1]; ?>" alt="<?php echo $films[0][2]; ?>"> </a>
-        </div>
-        <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[1][0]; ?>"><img class="h-full" src="<?php echo $films[1][1]; ?>" alt="<?php echo $films[1][2]; ?>"> </a>
-        </div>
-        <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[2][0]; ?>"><img class="h-full" src="<?php echo $films[2][1]; ?>" alt="<?php echo $films[2][2]; ?>"> </a>
-        </div>
-        <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[3][0]; ?>"><img class="h-full" src="<?php echo $films[3][1]; ?>" alt="<?php echo $films[3][2]; ?>"> </a>
-        </div>
-        <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[4][0]; ?>"><img class="h-full" src="<?php echo $films[4][1]; ?>" alt="<?php echo $films[4][2]; ?>"> </a>
-        </div>
-        <div class="item">
-          <a href="content/pages/film.php?id=<?php echo $films[5][0]; ?>"><img class="h-full" src="<?php echo $films[5][1]; ?>" alt="<?php echo $films[5][2]; ?>"> </a>
-        </div>
-      </div>
-    </section>
-
-    <!--form-newsletters-->
-
-    <div class="h-full absolute">
-      <style>
-        .simpleParallax {
-          height: 100%;
-        }
-
-        @media screen and (min-width: 600px) {
-          .simpleParallax {
-            height: auto;
-          }
-        }
-      </style>
-      <img class="h-full thumbnail" src="assets/img/background/parallax-newsletters.png"
-        alt="" />
+    <!-- Flèche flottante -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#B49FCC" class="w-10 h-10 opacity-70">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
+      </svg>
     </div>
+  </section>
 
-    <div class="py-10">
-      <div class="relative">
-        <h2 class="text-center uppercase font-semibold text-[24px] text-[#B49FCC] tracking-[.15em]">newsletters</h2>
-        <p class="py-5 text-center font-light text-[#EAD7D7] text-[18px] tracking-[.10em] lg:py-10">Abonnez-vous à notre
-          newsletters pour recevoir nos futurs offres et promotions.
-          <br>On vous attend !
-        </p>
-        <!---->
+  <!-- CONTENU -->
+  <div class="bg-[#1a0d14]">
+
+    <?php
+    function renderRow($title, $films) {
+      if (empty($films)) return;
+      echo '<section class="pt-10 px-4 md:px-8">';
+      echo '<h2 class="text-[#EAD7D7] text-lg md:text-xl font-bold tracking-widest uppercase mb-4 pl-1">' . htmlspecialchars($title) . '</h2>';
+      echo '<div class="row-scroll">';
+      foreach ($films as $film) {
+        echo '<a href="/content/pages/film.php?id=' . $film[0] . '" class="film-card relative flex-none w-32 md:w-40 lg:w-44 rounded-md overflow-hidden cursor-pointer">';
+        echo '<img src="' . htmlspecialchars($film[1]) . '" alt="' . htmlspecialchars($film[2]) . '" class="w-full h-48 md:h-60 lg:h-64 object-cover">';
+        echo '<div class="film-overlay absolute inset-0 opacity-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-2">';
+        echo '<span class="text-white text-xs font-bold leading-tight">' . htmlspecialchars($film[2]) . '</span>';
+        echo '</div></a>';
+      }
+      echo '</div></section>';
+    }
+    renderRow('🎬 Derniers ajouts', $derniersAjouts);
+    renderRow('💥 Action & Science-Fiction', $actionSF);
+    renderRow('🎭 Drame & Thriller', $drameThriller);
+    renderRow('🌍 Aventure & Animation', $aventure);
+    ?>
+
+    <!-- NEWSLETTERS -->
+    <div class="relative overflow-hidden mt-10">
+      <img class="thumbnail absolute inset-0 w-full h-full object-cover" src="assets/img/background/parallax-newsletters.png" alt="" />
+      <div class="relative z-10 py-16 px-6 bg-black/40">
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-[#B49FCC] tracking-widest uppercase mb-4">Newsletter</h2>
+        <p class="text-[#EAD7D7]/70 mb-8 leading-relaxed">Abonnez-vous pour recevoir nos futurs offres et promotions.</p>
 
         <form method="POST" action="" class="flex flex-col">
           <div class="flex justify-between items-center bg-white rounded-full lg:mx-20 xl:mx-64">
@@ -184,20 +115,15 @@ $films = $stmt->fetchAll();
                             lg:py-4 lg:mt-10" />
         </form>
       </div>
+      </div>
     </div>
   </div>
 
-  <!--footer-->
-  <div class="relative">
-    <?php include('content/includes/footer.php') ?>
-  </div>
+  <?php include('content/includes/footer.php') ?>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js"></script>
   <script src="assets/js/parallax-newsletters.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="assets/js/slider-film.js"></script>
 </body>
 
 </html>

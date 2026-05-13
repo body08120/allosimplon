@@ -17,7 +17,7 @@ if ($_SESSION['role_user'] != $admin) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="bg-[#412234] font-mono text-[#B49FCC]">
+<body class="bg-[#412234] pt-20 font-mono text-[#B49FCC] min-h-screen flex flex-col">
 
     <?php include('../../../includes/navbar.php'); ?>
 

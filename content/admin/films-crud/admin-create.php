@@ -21,7 +21,7 @@ if ($_SESSION['role_user'] != $admin) {
 </head>
 
 
-<body class="bg-[#412234] font-mono text-[#B49FCC]">
+<body class="bg-[#412234] pt-20 font-mono text-[#B49FCC] min-h-screen flex flex-col">
     <?php include('../../includes/navbar.php'); ?>
     <div class="flex flex-col items-center">
         <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Ajoutez un film
