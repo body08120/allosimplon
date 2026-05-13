@@ -17,9 +17,10 @@ if (isset($_GET['id'])) {
 
 
     if ($result) {
-        echo 'Record deleted successfully. <br> <a href="../admin-view.php">Retour au panneau administration</a>';
+        header('Location: /content/admin/films-crud/admin-view.php');
+        exit;
     } else {
-        echo "Error: " . $stmt->errorInfo()[2];
+        echo "Erreur : " . $stmt->errorInfo()[2];
     }
 
 }

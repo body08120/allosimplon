@@ -98,21 +98,17 @@ $aventure = $pdo->query("SELECT DISTINCT f.id_film, f.img_film, f.nom_film FROM 
         <h2 class="text-2xl font-bold text-[#B49FCC] tracking-widest uppercase mb-4">Newsletter</h2>
         <p class="text-[#EAD7D7]/70 mb-8 leading-relaxed">Abonnez-vous pour recevoir nos futurs offres et promotions.</p>
 
-        <form method="POST" action="" class="flex flex-col">
-          <div class="flex justify-between items-center bg-white rounded-full lg:mx-20 xl:mx-64">
-            <input type="email" placeholder="exemple.du08@gmail.fr" name="input-form-email-newsletters"
-              class="border-none bg-transparent focus:border-transparent focus:ring-0" />
-            <!--icone mail-->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6 mx-2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+        <form method="POST" action="" class="flex items-center gap-2 max-w-md mx-auto">
+          <div class="flex-1 flex items-center bg-white/10 border border-[#B49FCC]/40 rounded-full px-4 py-3 focus-within:border-[#B49FCC] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-[#B49FCC] flex-shrink-0 mr-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
             </svg>
+            <input type="email" placeholder="votre@email.fr" name="input-form-email-newsletters"
+              class="bg-transparent border-none focus:ring-0 focus:outline-none text-[#EAD7D7] placeholder-[#EAD7D7]/40 w-full text-sm tracking-wide" />
           </div>
-          <input type="submit" value="S'ABONNER" name="button-form-newsletters" class="py-1 px-8 mt-6 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
-                            focus:text-[24px] focus:bg-[#412234]
-                            md:px-16 md:py-2 
-                            lg:py-4 lg:mt-10" />
+          <button type="submit" class="px-5 py-3 bg-[#B49FCC] hover:bg-[#EAD7D7] text-[#412234] font-bold rounded-full text-sm tracking-widest uppercase transition-colors duration-200 whitespace-nowrap">
+            S'abonner
+          </button>
         </form>
       </div>
       </div>

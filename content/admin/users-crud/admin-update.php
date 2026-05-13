@@ -30,98 +30,87 @@ if (isset($_GET['id'])) {
                 $password = $row['mdp_user'];
                 $role = $row['role_user'];
             }
-
             ?>
-
             <!DOCTYPE html>
-            <html lang="en">
-
+            <html lang="fr">
             <head>
                 <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            
-                <title>Update users - Allosimplon</title>
+                <title>Modifier un utilisateur - AlloSimplon</title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
             </head>
-
-            <body class="bg-[#412234] pt-20 font-mono text-[#B49FCC] min-h-screen flex flex-col">
-
+            <body class="bg-[#1a0d14] pt-20 font-mono min-h-screen flex flex-col">
                 <?php include('../../includes/navbar.php'); ?>
 
-                <section class="flex flex-col items-center">
+                <div class="flex-1 px-4 py-10 max-w-xl mx-auto w-full">
+                    <h1 class="text-2xl font-bold text-[#EAD7D7] tracking-widest uppercase mb-8 text-center">Modifier l'utilisateur</h1>
 
-                    <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">User Update Form
-                    </h2>
+                    <form action="/content/admin/users-crud/traitement-update.php" method="POST" class="flex flex-col gap-6">
+                        <input type="hidden" name="id-user" value="<?php echo $id; ?>">
 
-                    <form action="/content/admin/users-crud/traitement-update.php" method="POST">
+                        <div class="bg-[#412234]/60 border border-[#6D466B]/40 rounded-2xl p-6 flex flex-col gap-4">
+                            <h2 class="text-[#B49FCC] text-xs tracking-widest uppercase font-bold mb-2">Informations</h2>
 
-                        <fieldset class="flex flex-col items-center">
+                            <div class="flex flex-col gap-1">
+                                <label class="text-[#EAD7D7]/60 text-xs tracking-widest uppercase">Nom</label>
+                                <input type="text" name="nom-user" required value="<?php echo htmlspecialchars($nom); ?>"
+                                    class="bg-[#1a0d14]/60 border border-[#6D466B]/50 rounded-full px-4 py-2 text-[#EAD7D7] text-sm focus:border-[#B49FCC] focus:ring-0 focus:outline-none" />
+                            </div>
 
-                            <legend>Informations du compte</legend>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-[#EAD7D7]/60 text-xs tracking-widest uppercase">Prénom</label>
+                                <input type="text" name="prenom-user" required value="<?php echo htmlspecialchars($prenom); ?>"
+                                    class="bg-[#1a0d14]/60 border border-[#6D466B]/50 rounded-full px-4 py-2 text-[#EAD7D7] text-sm focus:border-[#B49FCC] focus:ring-0 focus:outline-none" />
+                            </div>
 
-                            <span>Nom:</span><br>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-[#EAD7D7]/60 text-xs tracking-widest uppercase">Email</label>
+                                <input type="email" name="mail-user" required value="<?php echo htmlspecialchars($email); ?>"
+                                    class="bg-[#1a0d14]/60 border border-[#6D466B]/50 rounded-full px-4 py-2 text-[#EAD7D7] text-sm focus:border-[#B49FCC] focus:ring-0 focus:outline-none" />
+                            </div>
 
-                            <input type="text" name="nom-user" value="<?php echo $nom; ?>">
+                            <div class="flex flex-col gap-1">
+                                <label class="text-[#EAD7D7]/60 text-xs tracking-widest uppercase">Nouveau mot de passe <span class="normal-case text-[#EAD7D7]/30">(laisser vide = inchangé)</span></label>
+                                <input type="password" name="mdp-user" placeholder="••••••••"
+                                    class="bg-[#1a0d14]/60 border border-[#6D466B]/50 rounded-full px-4 py-2 text-[#EAD7D7] text-sm focus:border-[#B49FCC] focus:ring-0 focus:outline-none" />
+                            </div>
 
-                            <input type="hidden" name="id-user" value="<?php echo $id; ?>">
+                            <div class="flex flex-col gap-1">
+                                <label class="text-[#EAD7D7]/60 text-xs tracking-widest uppercase">Rôle</label>
+                                <div class="flex gap-3 mt-1">
+                                    <label class="flex items-center gap-2 bg-[#1a0d14]/60 border border-[#6D466B]/40 hover:border-[#B49FCC] rounded-full px-4 py-2 cursor-pointer text-sm text-[#EAD7D7]/80 transition-colors has-[:checked]:bg-[#B49FCC]/20 has-[:checked]:border-[#B49FCC] has-[:checked]:text-[#EAD7D7]">
+                                        <input type="radio" name="id-role" value="1" class="accent-[#B49FCC]" <?php echo $role == 1 ? 'checked' : ''; ?> /> Utilisateur
+                                    </label>
+                                    <label class="flex items-center gap-2 bg-[#1a0d14]/60 border border-[#6D466B]/40 hover:border-[#B49FCC] rounded-full px-4 py-2 cursor-pointer text-sm text-[#EAD7D7]/80 transition-colors has-[:checked]:bg-[#B49FCC]/20 has-[:checked]:border-[#B49FCC] has-[:checked]:text-[#EAD7D7]">
+                                        <input type="radio" name="id-role" value="2" class="accent-[#B49FCC]" <?php echo $role == 2 ? 'checked' : ''; ?> /> Admin
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
 
-                            <br>
-
-                            <span>Prénom:</span><br>
-
-                            <input type="text" name="prenom-user" value="<?php echo $prenom; ?>">
-
-                            <br>
-
-                            <span>Email:</span><br>
-
-                            <input type="email" name="mail-user" value="<?php echo $email; ?>">
-
-                            <br>
-
-                            <span>Mot de passe:</span><br>
-
-                            <input type="password" name="mdp-user" value="<?php echo $password; ?>">
-
-                            <br>
-
-                            <span>Rôle:</span><br><span>1 = utilisateur <br> 2 = admin</span><br>
-
-                            <input type="number" name="id-role" value="<?php echo $role; ?>">
-
-                            <br>
-
-                            <br><br>
-
-                            <input type="submit" value="Update" name="update" class="py-1 px-8 bg-[#B49FCC] rounded-full mx-auto text-semibold text-[18px] text-white uppercase tracking-[0.15em] 
-                            focus:text-[24px] focus:bg-[#412234] focus:border-transparent focus:ring-0">
-
-                        </fieldset>
-
+                        <div class="flex gap-4 justify-center">
+                            <a href="/content/admin/users-crud/admin-view.php"
+                                class="px-6 py-3 border border-[#6D466B]/60 hover:border-[#B49FCC] text-[#EAD7D7]/70 hover:text-[#B49FCC] rounded-full text-sm tracking-widest uppercase transition-colors">
+                                Annuler
+                            </a>
+                            <button type="submit" name="update"
+                                class="px-8 py-3 bg-[#B49FCC] hover:bg-[#EAD7D7] text-[#412234] font-bold rounded-full text-sm tracking-widest uppercase transition-colors duration-200">
+                                Enregistrer
+                            </button>
+                        </div>
                     </form>
-                    <br>
-                    <a class="underline text-[#EAD7D7]" href="/content/admin/users-crud/admin-view.php">Retour à la gestion des utilisateurs</a>
-                </section>
-
+                </div>
 
                 <?php include('../../includes/footer.php'); ?>
-
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
             </body>
-
             </html>
-
             <?php
-
         }
     } else {
-
-        // header('Location: admin-view.php');
-        echo 'error';
+        header('Location: /content/admin/users-crud/admin-view.php');
+        exit;
     }
-
 }
-
 ?>
