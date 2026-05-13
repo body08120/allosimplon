@@ -9,5 +9,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 session_destroy();
-header('Location: /projets/allosimplon/index.php');
+header('Location: /index.php');
 ?>

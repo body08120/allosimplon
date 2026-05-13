@@ -4,7 +4,7 @@ $id_film = $_SESSION['id_film'];
 
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: /projets/allosimplon/index.php');
+    header('Location: /index.php');
 }
 include_once("../../../assets/config/config.php");
 
@@ -26,7 +26,7 @@ $acteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajoutez des réalisateur à votre film !</title>
-    <base href="/projets/allosimplon/">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -39,7 +39,7 @@ $acteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Ajoutez un, ou
             plusieurs acteurs à
             votre film</h2>
-        <form action="content/admin/films-crud/traitement/acteurs.php" method="POST">
+        <form action="/content/admin/films-crud/traitement/acteurs.php" method="POST">
             <fieldset class="flex flex-col my-6">
                 <input type="hidden" name="action" value="selectionner">
                 <select name="acteur">
@@ -56,7 +56,7 @@ $acteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </fieldset>
         </form>
 
-        <form action="content/admin/films-crud/traitement/acteurs.php" method="post">
+        <form action="/content/admin/films-crud/traitement/acteurs.php" method="post">
             <h2 class=" text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Ajoutez un
             acteur qui n'est pas dans la liste</h2>
             <fieldset class="flex flex-col my-6">
@@ -74,7 +74,7 @@ $acteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </fieldset>
         </form>
 
-        <a class="underline" href="content/admin/panel.php">Retour au panneau d'administration</a>
+        <a class="underline" href="/content/admin/panel.php">Retour au panneau d'administration</a>
 
     </div>
 

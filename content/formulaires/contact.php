@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/projets/allosimplon/">
+
     <title>AlloSimplon - Contact</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"  rel="stylesheet" />
@@ -33,7 +33,7 @@ session_start();
 
 <!-- form contact -->
 <div class="bg-[#6D466B] py-5 px-10 md:py-10 md:px-20 lg:px-32 xl:rounded-lg">
-        <form action="content/formulaires-traitement/traitement-contact.php" method="post" class="flex flex-col">
+        <form action="/content/formulaires-traitement/traitement-contact.php" method="post" class="flex flex-col">
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Nom" name="nom-user" />
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="email" placeholder="Adresse email" name="mail-user" />
             <input class="rounded-full my-3 focus:border-transparent focus:ring-0 md:my-5" type="text" placeholder="Objet" name="motif" />

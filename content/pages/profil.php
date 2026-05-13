@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/allosimplon/">
+
     <title>AlloSimplon - ???USER???</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css"  rel="stylesheet" />
@@ -22,13 +22,13 @@ session_start();
 
 <!--Section USER-->
 <section class="w-auto h-96 
-                bg-[url('http://localhost/allosimplon/assets/img/background/bg-user-profil.png')] bg-cover bg-no-repeat
+                bg-[url('/assets/img/background/bg-user-profil.png')] bg-cover bg-no-repeat
                 flex justify-center items-center 
                 xl:h-[680px]">
         <!-- cadre user -->
         <div class="flex flex-col items-center">
             <div class="rounded-full w-1/5 border-4 border-[#B49FCC] overflow-hidden">
-                <img class="h-2/6" src="http://localhost/allosimplon/assets/img/avatar.png" alt="Avatar utilisateur" />
+                <img class="h-2/6" src="/assets/img/avatar.png" alt="Avatar utilisateur" />
             </div>
                 <span class="text-[#B49FCC] font-bold my-8">???USER???</span>
         </div>
@@ -49,7 +49,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->
@@ -77,7 +77,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->
@@ -105,7 +105,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->
@@ -133,7 +133,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->
@@ -161,7 +161,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->
@@ -189,7 +189,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->
@@ -217,7 +217,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->
@@ -245,7 +245,7 @@ session_start();
 <div class="bg-[#6D466B] mb-20 border-y-2 lg:border-x-2 ">
 
     <!--affiche-->
-    <img src="http://localhost/allosimplon/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
+    <img src="/assets/img/affiche.png" alt="" class="py-5 mx-auto w-2/3"/>
     
 <div class="py-5 px-10">
     <!--année-->

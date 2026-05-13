@@ -2,7 +2,7 @@
 session_start();
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: /projets/allosimplon/index.php');
+    header('Location: /index.php');
 }
 
 
@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/projets/allosimplon/">
+
     <title>Allosimplon - Modifiez les réalisateurs du film</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
             Form
         </h2>
 
-        <form action="content/admin/films-crud/traitement/realisateurs_update.php?id=<?php echo $film_id; ?>"
+        <form action="/content/admin/films-crud/traitement/realisateurs_update.php?id=<?php echo $film_id; ?>"
             method="POST">
             <fieldset class="flex flex-col items-left">
 
@@ -74,7 +74,7 @@ if (isset($_GET['id'])) {
 
         <br><br>
         <a class="underline text-[#EAD7D7]"
-            href="content/admin/films-crud/admin-update.php?id=<?php echo $film_id; ?>">Retour à la gestion du film</a>
+            href="/content/admin/films-crud/admin-update.php?id=<?php echo $film_id; ?>">Retour à la gestion du film</a>
 
     </section>
 

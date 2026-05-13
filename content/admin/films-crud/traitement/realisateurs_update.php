@@ -2,7 +2,7 @@
 session_start();
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: /projets/allosimplon/index.php');
+    header('Location: /index.php');
 }
 
 // var_dump($_POST['realisateurs']);

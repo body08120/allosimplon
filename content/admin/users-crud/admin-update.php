@@ -2,7 +2,7 @@
 session_start();
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: /projets/allosimplon/index.php');
+    header('Location: /index.php');
 }
 include_once("../../../assets/config/config.php");
 
@@ -26,10 +26,9 @@ if (isset($_GET['id'])) {
                 $id = $row['id_user'];
                 $nom = $row['nom_user'];
                 $prenom = $row['prenom_user'];
-                $email = $row['mail_user'];
-                $pseudo = $row['pseudo_user'];
+                $email = $row['email_user'];
                 $password = $row['mdp_user'];
-                $role = $row['id_role'];
+                $role = $row['role_user'];
             }
 
             ?>
@@ -41,7 +40,7 @@ if (isset($_GET['id'])) {
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <base href="/projets/allosimplon/">
+            
                 <title>Update users - Allosimplon</title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -56,7 +55,7 @@ if (isset($_GET['id'])) {
                     <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">User Update Form
                     </h2>
 
-                    <form action="content/admin/users-crud/traitement-update.php" method="POST">
+                    <form action="/content/admin/users-crud/traitement-update.php" method="POST">
 
                         <fieldset class="flex flex-col items-center">
 
@@ -82,12 +81,6 @@ if (isset($_GET['id'])) {
 
                             <br>
 
-                            <span>Pseudonyme:</span><br>
-
-                            <input type="text" name="pseudo-user" value="<?php echo $pseudo; ?>">
-
-                            <br>
-
                             <span>Mot de passe:</span><br>
 
                             <input type="password" name="mdp-user" value="<?php echo $password; ?>">
@@ -109,7 +102,7 @@ if (isset($_GET['id'])) {
 
                     </form>
                     <br>
-                    <a class="underline text-[#EAD7D7]" href="content/admin/users-crud/admin-view.php">Retour à la gestion des utilisateurs</a>
+                    <a class="underline text-[#EAD7D7]" href="/content/admin/users-crud/admin-view.php">Retour à la gestion des utilisateurs</a>
                 </section>
 
 

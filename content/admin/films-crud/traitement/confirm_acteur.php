@@ -2,7 +2,7 @@
 session_start();
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: /projets/allosimplon/index.php');
+    header('Location: /index.php');
 }?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,7 @@ if ($_SESSION['role_user'] != $admin) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Que voulez-vous faire ?</title>
-    <base href="/projets/allosimplon/">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -26,9 +26,9 @@ if ($_SESSION['role_user'] != $admin) {
         </h2>
 
         <div class="my-6 flex flex-col items-center">
-            <a class="underline uppercase" href="content/admin/films-crud/film_acteur.php">Ajoutez un autre acteur</a><br>
+            <a class="underline uppercase" href="/content/admin/films-crud/film_acteur.php">Ajoutez un autre acteur</a><br>
             <span class="uppercase">OU</span><br>
-            <a class="underline uppercase" href="content/admin/films-crud/admin-view.php">Retourner à la gestion des films</a><br>
+            <a class="underline uppercase" href="/content/admin/films-crud/admin-view.php">Retourner à la gestion des films</a><br>
         </div>
     </div>
 

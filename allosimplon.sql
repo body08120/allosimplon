@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS possede2 (
 
 -- Admin par défaut (mot de passe: admin123)
 INSERT INTO users (nom_user, prenom_user, email_user, mdp_user, role_user) VALUES
-('Admin', 'Simplon', 'admin@allosimplon.fr', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 2),
-('Dupont', 'Jean', 'jean.dupont@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1);
+('Admin', 'Simplon', 'admin@allosimplon.fr', '$2y$10$Ga8T8fK0T27A/33nfyyowO5ft73yscHVSWmtaTtCLBmq5QVSj9qte', 2),
+('Dupont', 'Jean', 'jean.dupont@example.com', '$2y$10$Ga8T8fK0T27A/33nfyyowO5ft73yscHVSWmtaTtCLBmq5QVSj9qte', 1);
 
 -- Genres
 INSERT INTO genres (nom_genre) VALUES

@@ -2,7 +2,7 @@
 session_start();
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: http://localhost/allosimplon/index.php');
+    header('Location: /index.php');
 }
 include_once("../../../assets/config/config.php");
 
@@ -11,7 +11,6 @@ if (isset($_POST['submit'])) {
     $nom = $_POST['nom-user'];
     $prenom = $_POST['prenom-user'];
     $email = $_POST['mail-user'];
-    $pseudo = $_POST['pseudo-user'];
     $password = $_POST['mdp-user'];
     $role = $_POST['id-role'];
 
@@ -21,7 +20,7 @@ if (isset($_POST['submit'])) {
 
 
     // Vérification si l'email est déjà utilisé
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE mail_user = ?");
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
     if ($user) {
@@ -34,13 +33,12 @@ if (isset($_POST['submit'])) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // Enregistrement de l'utilisateur dans la base de données
-    $stmt = $pdo->prepare("INSERT INTO users (nom_user, prenom_user, mail_user, pseudo_user, mdp_user, id_role) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO users (nom_user, prenom_user, email_user, mdp_user, role_user) VALUES (?, ?, ?, ?, ?)");
     $stmt->bindParam(1, $nom);
     $stmt->bindParam(2, $prenom);
     $stmt->bindParam(3, $email);
-    $stmt->bindParam(4, $pseudo);
-    $stmt->bindParam(5, $hashed_password);
-    $stmt->bindParam(6, $role);
+    $stmt->bindParam(4, $hashed_password);
+    $stmt->bindParam(5, $role);
     $stmt->execute();
 
     header('Location: admin-view.php');
@@ -56,7 +54,7 @@ include_once("../../../assets/config/close.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/projets/allosimplon/">
+
     <title>Admin - Créez un utilisateur</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -92,12 +90,6 @@ include_once("../../../assets/config/close.php");
 
                 <br>
 
-                Pseudo:<br>
-
-                <input type="text" name="pseudo-user" required>
-
-                <br>
-
                 Mdp:<br>
 
                 <input type="password" name="mdp-user" required>
@@ -117,7 +109,7 @@ include_once("../../../assets/config/close.php");
             </fieldset>
 
         </form>
-        <a class="underline" href="content/admin/users-crud/admin-view.php">Retour à la gestion des utilisateurs</a>
+        <a class="underline" href="/content/admin/users-crud/admin-view.php">Retour à la gestion des utilisateurs</a>
     </div>
 
     <?php include('../../includes/footer.php'); ?>

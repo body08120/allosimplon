@@ -25,7 +25,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Vérification si l'email est déjà utilisé
-$stmt = $pdo->prepare("SELECT * FROM users WHERE mail_user = ?");
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 if ($user) {

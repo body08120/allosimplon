@@ -29,7 +29,7 @@ if (empty($email) || empty($password)) {
 
 
 // Recherche de l'utilisateur dans la base de données
-$stmt = $pdo->prepare("SELECT * FROM users WHERE mail_user = ?");
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email_user = ?");
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 
@@ -39,8 +39,8 @@ $user = $stmt->fetch();
 if ($user && password_verify($password, $user["mdp_user"])) {
     $_SESSION['logged_in'] = true;
     $_SESSION['mail-user'] = $_POST['mail-user'];
-    $_SESSION['pseudo_user'] = $user['pseudo_user'];
-    $_SESSION['role_user'] = $user['id_role'];
+    $_SESSION['pseudo_user'] = $user['prenom_user'] . ' ' . $user['nom_user'];
+    $_SESSION['role_user'] = $user['role_user'];
 
     header('location: /index.php');
 } else {

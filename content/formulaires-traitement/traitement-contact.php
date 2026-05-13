@@ -92,7 +92,7 @@ if ($renseigne == 1 and $courriel == 1) {
     /*L'envoi du mail - Et page de redirection*/
     mail($to, $sujet, $msg, $headers);
     // echo "succes";
-    header('Location:/projets/allosimplon/index.php');
+    header('Location:/index.php');
 } else {
 
     echo "error";

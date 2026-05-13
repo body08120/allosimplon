@@ -2,7 +2,7 @@
 session_start();
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: /projets/allosimplon/index.php');
+    header('Location: /index.php');
 }
 include_once("../../../assets/config/config.php");
 
@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <base href="/projets/allosimplon/">
+            
                 <title>Update films - Allosimplon</title>
                 <script src="https://cdn.tailwindcss.com"></script>
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -93,7 +93,7 @@ if (isset($_GET['id'])) {
                     <h2 class="text-center uppercase font-semibold text-[24px] text-[#6D466B] tracking-[.15em]">Film Update Form
                     </h2>
 
-                    <form action="content/admin/films-crud/traitement/update.php" method="POST">
+                    <form action="/content/admin/films-crud/traitement/update.php" method="POST">
 
                         <fieldset class="flex flex-col items-center">
 
@@ -141,7 +141,7 @@ if (isset($_GET['id'])) {
                             <br>
 
                             <a class="underline text-[#EAD7D7]"
-                                href="content/admin/films-crud/film_genre_update.php?id=<?php echo $film_id; ?>">Modifiez les
+                                href="/content/admin/films-crud/film_genre_update.php?id=<?php echo $film_id; ?>">Modifiez les
                                 genres</a>
                             <br>
                             <br>
@@ -157,7 +157,7 @@ if (isset($_GET['id'])) {
                             <br>
 
                             <a class="underline text-[#EAD7D7]"
-                                href="content/admin/films-crud/film_realisateur_update.php?id=<?php echo $film_id; ?>">Modifiez les
+                                href="/content/admin/films-crud/film_realisateur_update.php?id=<?php echo $film_id; ?>">Modifiez les
                                 réalisateurs</a>
                             <br>
                             <br>
@@ -172,7 +172,7 @@ if (isset($_GET['id'])) {
                             <br>
 
                             <a class="underline text-[#EAD7D7]"
-                                href="content/admin/films-crud/film_acteur_update.php?id=<?php echo $film_id; ?>">Modifiez les
+                                href="/content/admin/films-crud/film_acteur_update.php?id=<?php echo $film_id; ?>">Modifiez les
                                 acteurs</a>
 
                             <br><br>
@@ -184,7 +184,7 @@ if (isset($_GET['id'])) {
 
                     </form>
                     <br>
-                    <a class="underline text-[#EAD7D7]" href="content/admin/films-crud/admin-view.php">Retour à la gestion des
+                    <a class="underline text-[#EAD7D7]" href="/content/admin/films-crud/admin-view.php">Retour à la gestion des
                         films</a>
                 </section>
 

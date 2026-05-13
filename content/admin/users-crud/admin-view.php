@@ -2,7 +2,7 @@
 session_start();
 $admin = '2';
 if ($_SESSION['role_user'] != $admin) {
-    header('Location: http://localhost/allosimplon/index.php');
+    header('Location: /index.php');
 }
 include_once("../../../assets/config/config.php");
 
@@ -27,7 +27,7 @@ include_once("../../../assets/config/close.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/projets/allosimplon/">
+
     <title>Tableau users - Allosimplon</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
@@ -55,8 +55,6 @@ include_once("../../../assets/config/close.php");
                     <th class="px-2 py-2 border-2">Prénom</th>
 
                     <th class="px-2 py-2 border-2">Email</th>
-
-                    <th class="px-2 py-2 border-2">Pseudo</th>
 
                     <th class="px-2 py-2 border-2">Mot de passe</th>
 
@@ -91,11 +89,7 @@ include_once("../../../assets/config/close.php");
                             </td>
 
                             <td class="px-2 py-2 border-2">
-                                <?php echo $row['mail_user']; ?>
-                            </td>
-
-                            <td class="px-2 py-2 border-2">
-                                <?php echo $row['pseudo_user']; ?>
+                                <?php echo $row['email_user']; ?>
                             </td>
 
                             <td class="px-2 py-2 border-2">
@@ -103,14 +97,14 @@ include_once("../../../assets/config/close.php");
                             </td>
 
                             <td class="px-2 py-2 border-2">
-                                <?php echo $row['id_role']; ?>
+                                <?php echo $row['role_user']; ?>
                             </td>
 
                             <td class="px-2 py-2 border-2">
                                 <a class="px-2 py-2 border-2 bg-green-400 text-[#6D466B]"
-                                    href="content/admin/users-crud/admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a
+                                    href="/content/admin/users-crud/admin-update.php?id=<?php echo $row['id_user']; ?>">Edit</a>&nbsp;<a
                                     class="px-2 py-2 border-2 bg-red-400 text-[#6D466B]"
-                                    href="content/admin/users-crud/admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
+                                    href="/content/admin/users-crud/admin-delete.php?id=<?php echo $row['id_user']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -124,9 +118,9 @@ include_once("../../../assets/config/close.php");
 
             </tbody>
         </table>
-        <a class="underline text-[#EAD7D7]" href="content/admin/users-crud/admin-create.php">Ajouter un utilisateur</a>
+        <a class="underline text-[#EAD7D7]" href="/content/admin/users-crud/admin-create.php">Ajouter un utilisateur</a>
         <br>
-        <a class="underline text-[#EAD7D7]" href="content/admin/panel.php">Retour au panneau d'administration</a>
+        <a class="underline text-[#EAD7D7]" href="/content/admin/panel.php">Retour au panneau d'administration</a>
     </div>
 
 
